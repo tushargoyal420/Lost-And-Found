@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "258640104670",
+    "project_id": "minelostandfound",
+    "storage_bucket": "minelostandfound.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258640104670:android:111bfb70ed9296ae27c64f",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258640104670-qe16rpq8409n9mjjij04842npb6ek9ga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAab9Ugn18RF7yT4w1VKO92vKtmxcwvt98"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "258640104670-qe16rpq8409n9mjjij04842npb6ek9ga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
