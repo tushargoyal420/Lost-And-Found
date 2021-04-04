@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".t5_HomeScreeen"
+    android:background="@drawable/backgroundhomescreen0"
+    >
+
+    <ImageButton
+        android:id="@+id/logoutbuttonhomescreen"
+        android:layout_width="22dp"
+        android:layout_height="19dp"
+        android:background="@drawable/logouthomescreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/logouthomescreen"
+        android:visibility="invisible"
+        />
+
+    <Button
+        android:id="@+id/ilostsomethingbutton"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/ifoundsomething"
+        android:text="I lost \n something"
+        android:textAllCaps="false"
+        android:textColor="#455D5C"
+        android:textSize="13px"
+        android:textStyle="bold"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.268" />
+
+    <Button
+        android:id="@+id/ifoundsomethingbutton"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/ifoundsomething"
+        android:text="I found \n something"
+        android:textAllCaps="false"
+        android:textColor="#455D5C"
+        android:textSize="13px"
+        android:textStyle="bold"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.268" />
+
+    <ImageView
+        android:id="@+id/backgroundboxhomescreen"
+        android:layout_width="187dp"
+        android:layout_height="61dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/backgroundboxhomescreen" />
+
+    <ImageButton
+        android:id="@+id/myaccountshomescreen"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/myaccounthomescreen"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.928"
+        app:srcCompat="@drawable/myaccounthomescreen"
+        tools:ignore="MissingConstraints"
+        />
+
+    <Button
+        android:id="@+id/messagesbuttonhomescreen"
+        android:layout_width="85dp"
+        android:layout_height="35dp"
+        android:background="@drawable/messageshomescreen"
+        android:text="Messages"
+        android:textAllCaps="false"
+        android:textSize="15px"
+        app:backgroundTint="#455D5C"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundboxhomescreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9226" />
+
+    <ImageButton
+        android:id="@+id/settingbuttonhomescreen"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/settinghomescreen"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.928"
+        app:srcCompat="@drawable/settinghomescreen"
+        tools:ignore="MissingConstraints"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
