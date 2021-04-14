@@ -9,11 +9,9 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="enter_email_address">Enter email address</string>
+    <string name="enter_mail_address">Enter email address</string>
     <string name="lost_and_found">Lost and Found</string>
     <string name="welcome_in_our_app">Welcome in Our App</string>
-    <string name="login">Login</string>
-    <string name="signup">Signup</string>
     <string name="Congratulationsmessage">Congratulations</string>
     <string name="userCreatedSucessfully">Your Account created</string>
     <string name="PleaseCheckEmail">Please Check Email</string>
@@ -29,4 +27,13 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="enter_your_password">Enter your Password</string>
+    <string name="enter_email_address">Enter email address</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_an_account_signup">Don\'t have an account? Signup.</string>
+    <string name="reset_password">Reset password</string>
+    <string name="signup">Signup</string>
+    <string name="already_have_an_account_login">Already have an account? Login.</string>
+    <string name="create_a_password">Create a password</string>
+    <string name="enter_your_name">Enter your name</string>
 </resources>

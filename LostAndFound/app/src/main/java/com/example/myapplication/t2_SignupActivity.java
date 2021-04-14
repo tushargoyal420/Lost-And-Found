@@ -28,7 +28,7 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.t3_activity_signup);
+        setContentView(R.layout.t2_activity_signup);
         mfullname = findViewById(R.id.fullname);
         mEmailAddress = findViewById(R.id.EmailAddress);
         mCreatePassword = findViewById(R.id.CreatePassword);

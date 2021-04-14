@@ -19,7 +19,7 @@ public class t1_Login_signup_choice extends AppCompatActivity {
         setContentView(R.layout.t1_activity_login_signup_choice);
 
         mlogInButton2SS = findViewById(R.id.loginbutton2);
-        msignUpButtonSS = findViewById(R.id.signupbutton2);
+        msignUpButtonSS = findViewById(R.id.signupbutton);
 
         fAuth = FirebaseAuth.getInstance();     //for take instance from the our firebase
 

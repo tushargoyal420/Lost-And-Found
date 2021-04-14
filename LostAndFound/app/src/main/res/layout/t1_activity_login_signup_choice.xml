@@ -19,11 +19,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupbutton2"
+        app:layout_constraintTop_toBottomOf="@+id/signupbutton"
         app:layout_constraintVertical_bias="0.116" />
 
     <Button
-        android:id="@+id/signupbutton2"
+        android:id="@+id/signupbutton"
         android:layout_width="239dp"
         android:layout_height="58dp"
         android:layout_marginTop="640dp"
