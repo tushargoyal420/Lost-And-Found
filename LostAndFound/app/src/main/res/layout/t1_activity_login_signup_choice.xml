@@ -4,60 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/loginsignupscreen"
-    tools:context=".t1_login_signp_choice">
+    android:background="#455D5C"
+    tools:context=".t1_login_signup_choice">
 
-
-    <Button
-        android:id="@+id/signUpButtonSS"
-        android:layout_width="229dp"
-        android:layout_height="50dp"
-        android:background="@drawable/buttonbox"
-        android:paddingTop="0px"
-        android:paddingBottom="10px"
-        android:text="Signup"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textColorHighlight="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textColorLink="#FFFFFF"
-        android:textSize="60px"
-        app:backgroundTint="#455D5C"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.847" />
-
-    <Button
-        android:id="@+id/logInButton2SS"
-        android:layout_width="229dp"
-        android:layout_height="50dp"
-        android:background="@drawable/buttonbox"
-        android:paddingTop="0px"
-        android:paddingBottom="10px"
-        android:text="Login"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textColorHighlight="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textColorLink="#FFFFFF"
-        android:textSize="60px"
-        app:backgroundTint="#455D5C"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.918" />
-
-    <androidx.constraintlayout.helper.widget.Flow
-        android:id="@+id/flow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <androidx.constraintlayout.helper.widget.Flow
-        android:id="@+id/flow2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
+    <LinearLayout
+        android:layout_width="413dp"
+        android:layout_height="467dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="379dp"></LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

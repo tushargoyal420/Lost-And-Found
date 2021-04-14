@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".t10_MySettingActivity"></activity>
+        <activity android:name=".t1_login_signup_choice"></activity>
+        <activity android:name=".t10_MySettingActivity" />
         <activity android:name=".t9_MessageActivity" />
         <activity android:name=".t8_MyAccountAcivity" />
         <activity android:name=".t7_IFoundSomethingActivity" />
@@ -21,10 +22,10 @@
         <activity android:name=".t3_LoginActivity" />
         <activity android:name=".t2_SignupActivity" />
         <activity android:name=".t1_login_signp_choice" />
-
         <activity android:name=".t0_splash_screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
