@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-public class t2_1_signup_congratulation extends AppCompatActivity {
+public class t3_Signup_congratulation extends AppCompatActivity {
     private static final int SPLASH_TIME_OUT = 3000;
 
     @Override
@@ -16,7 +16,7 @@ public class t2_1_signup_congratulation extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent( t2_1_signup_congratulation.this, t3_LoginActivity.class);
+                Intent intent = new Intent( t3_Signup_congratulation.this, t4_LoginActivity.class);
                 startActivity(intent);
                 finish();
             }

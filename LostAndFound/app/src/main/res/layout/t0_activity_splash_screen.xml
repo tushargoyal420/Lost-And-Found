@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#1f2837"
 
-    tools:context=".t0_splash_screen">
+    tools:context=".t0_Splash_screen">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -11,18 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".t2_1_signup_congratulation"></activity>
+        <activity android:name=".t5_Reset_password"></activity>
+        <activity android:name=".t3_Signup_congratulation" />
         <activity android:name=".t10_MySettingActivity" />
         <activity android:name=".t9_MessageActivity" />
         <activity android:name=".t8_MyAccountAcivity" />
         <activity android:name=".t7_IFoundSomethingActivity" />
         <activity android:name=".t6_ILostSomethingActivity" />
         <activity android:name=".t5_HomeScreeen" />
-        <activity android:name=".t4_WelcomeNote" />
-        <activity android:name=".t3_LoginActivity" />
+        <activity android:name=".t4_LoginActivity" />
         <activity android:name=".t2_SignupActivity" />
-        <activity android:name=".t1_login_signp_choice" />
-        <activity android:name=".t0_splash_screen">
+        <activity android:name=".t1_Login_signup_choice" />
+        <activity android:name=".t0_Splash_screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

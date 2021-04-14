@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/loginsignupscreen"
-    tools:context=".t1_login_signup_choice">
+    tools:context=".t1_Login_signup_choice">
 
 
     <Button

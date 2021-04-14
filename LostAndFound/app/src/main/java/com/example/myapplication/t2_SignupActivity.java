@@ -28,7 +28,7 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.t2_activity_signup);
+        setContentView(R.layout.t3_activity_signup);
         mfullname = findViewById(R.id.fullname);
         mEmailAddress = findViewById(R.id.EmailAddress);
         mCreatePassword = findViewById(R.id.CreatePassword);
@@ -75,9 +75,9 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
                         }
                     });
                     finish();
-                    startActivity(new Intent(getApplicationContext(), t2_1_signup_congratulation.class));
+                    startActivity(new Intent(getApplicationContext(), t3_Signup_congratulation.class));
                 } else {
-                    Toast.makeText(t2_SignupActivity.this, "Could not registered ... Please try again", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(t2_SignupActivity.this, "Could not registered. Please try again", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -92,7 +92,7 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
         } else if (view == mAlreadyHaveAnAccount) {
             finish();
             // Redirect to login activity
-            startActivity(new Intent(this, t3_LoginActivity.class));
+            startActivity(new Intent(this, t4_LoginActivity.class));
         }
     }
 }

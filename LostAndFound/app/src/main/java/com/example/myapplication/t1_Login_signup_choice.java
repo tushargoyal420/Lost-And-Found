@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class t1_login_signp_choice extends AppCompatActivity {
+public class t1_Login_signup_choice extends AppCompatActivity {
     Button msignUpButtonSS, mlogInButton2SS ;
     FirebaseAuth fAuth;
 
@@ -31,7 +31,7 @@ public class t1_login_signp_choice extends AppCompatActivity {
         mlogInButton2SS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), t3_LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(), t4_LoginActivity.class));
             }
         });
         msignUpButtonSS.setOnClickListener(new View.OnClickListener() {

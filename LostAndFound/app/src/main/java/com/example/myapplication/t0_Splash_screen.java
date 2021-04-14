@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 
-public class t0_splash_screen extends AppCompatActivity {
+public class t0_Splash_screen extends AppCompatActivity {
     View mpurpleeline, mwhiteline, mredline, mwhiteline2, mgreenline,mpurpleline2;
     TextView mlostandfoubdtextsplashscreen, mwelcomeinourappsplashscreen;
 
@@ -31,7 +31,7 @@ public class t0_splash_screen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent( t0_splash_screen.this, t1_login_signp_choice.class);
+                Intent intent = new Intent( t0_Splash_screen.this, t1_Login_signup_choice.class);
                 startActivity(intent);
                 finish();
             }

@@ -18,7 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class t3_LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class t4_LoginActivity extends AppCompatActivity implements View.OnClickListener {
     EditText mEmailAddress2, mLogInPassword;
     Button mLogInButton, mDontHaveAnAccount, mResetPassButton;
     FirebaseAuth fAuth;
@@ -27,7 +27,7 @@ public class t3_LoginActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.t3_activity_login);
+        setContentView(R.layout.t4_activity_login);
 
         fAuth = FirebaseAuth.getInstance();
         mEmailAddress2 = findViewById(R.id.EmailAddress2);
@@ -36,18 +36,15 @@ public class t3_LoginActivity extends AppCompatActivity implements View.OnClickL
         mLogInButton = findViewById(R.id.LogInButton);
         mResetPassButton = findViewById(R.id.resetPassButton);
 
-
         mLogInButton.setOnClickListener(this);
         mDontHaveAnAccount.setOnClickListener(this);
         mResetPassButton.setOnClickListener(this);
     }
-
     private void userLogin() {
         String email = mEmailAddress2.getText().toString().trim();
         String password = mLogInPassword.getText().toString().trim();
 
-        //check is user enter an email id or not
-        if (TextUtils.isEmpty(email)) {
+         if (TextUtils.isEmpty(email)) {
             mEmailAddress2.setError("Please enter an Email");
             return;
         }
@@ -55,11 +52,7 @@ public class t3_LoginActivity extends AppCompatActivity implements View.OnClickL
             mLogInPassword.setError("Please enter an Password");
             return;
         }
-//                if (password.length() < 6) {
-//                    mLogInPassword.setError("Enter password more then 6 characters");
-//                    return;
-//                }
-        // authenticate
+
         fAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -67,20 +60,19 @@ public class t3_LoginActivity extends AppCompatActivity implements View.OnClickL
                         if (task.isSuccessful()) {
                             FirebaseUser user = fAuth.getCurrentUser();
                             if (!user.isEmailVerified()) {
-                                Toast.makeText(t3_LoginActivity.this, "Please Verify email.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(t4_LoginActivity.this, "Please Verify email.", Toast.LENGTH_SHORT).show();
                             } else {
                                 // start main activity
                                 finish();
-                                startActivity(new Intent(getApplicationContext(), t4_WelcomeNote.class));
+                                startActivity(new Intent(getApplicationContext(), t5_HomeScreeen.class));
                             }
                         } else {
-                            Toast.makeText(t3_LoginActivity.this, "Authentication Error", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(t4_LoginActivity.this, "Authentication Error", Toast.LENGTH_SHORT).show();
                             //show an error message
                         }
                     }
                 });
     }
-
     @Override
     public void onClick(View view) {
         if (view == mLogInButton) {
@@ -89,31 +81,18 @@ public class t3_LoginActivity extends AppCompatActivity implements View.OnClickL
             finish();
             startActivity(new Intent(this, t2_SignupActivity.class));
         } else if (view == mResetPassButton) {
-            // Reset password through email
-            fAuth.getInstance().sendPasswordResetEmail("tusshartg420@gmail.com")
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(context, "Email Sent", Toast.LENGTH_LONG).show();
-                            }
-                        }
-                    });
+            finish();
+            startActivity(new Intent(getApplicationContext(), t5_HomeScreeen.class));
         }
-
+            // Reset password through email
+//            fAuth.getInstance().sendPasswordResetEmail("tusshartg420@gmail.com")
+//                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+//                        @Override
+//                        public void onComplete(@NonNull Task<Void> task) {
+//                            if (task.isSuccessful()) {
+//                                Toast.makeText(context, "Email Sent", Toast.LENGTH_LONG).show();
+//                            }
+//                        }
+//                    });
+        }
     }
-}
-
-
-//
-//        mDontHaveAnAccount.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(getApplicationContext(), t2_SignupActivity.class));
-//
-//            }
-//        });
-//
-//    }
-//
-//}

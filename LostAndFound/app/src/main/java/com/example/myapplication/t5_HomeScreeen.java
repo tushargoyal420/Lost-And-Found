@@ -61,7 +61,7 @@ public class t5_HomeScreeen extends AppCompatActivity {
     }
     public void logout(View view) {
         FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(), t1_login_signp_choice.class));
+        startActivity(new Intent(getApplicationContext(), t1_Login_signup_choice.class));
         finish();
     }
 }
