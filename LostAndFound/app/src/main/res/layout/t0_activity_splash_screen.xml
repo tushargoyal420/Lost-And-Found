@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1f2837"
+
+    tools:context=".t0_splash_screen">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="93dp"
+        tools:layout_editor_absoluteY="167dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+            <View
+                android:layout_toLeftOf="@+id/purpelline"
+                android:id="@+id/whiteline"
+                android:layout_width="20dp"
+                android:layout_height="50dp"
+                android:background="@drawable/white_line"
+                android:layout_toStartOf="@+id/purpelline" />
+
+            <View
+                android:id="@+id/purpelline"
+                android:layout_width="20dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="15dp"
+                android:layout_toLeftOf="@+id/redline"
+                android:background="@drawable/purple_line"
+                android:layout_marginStart="15dp"
+                android:layout_toStartOf="@+id/redline" />
+
+            <View
+                android:id="@+id/redline"
+                android:layout_width="20dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/red_line"
+                android:layout_marginStart="15dp"
+                android:layout_toLeftOf="@+id/whiteline2"
+                android:layout_toStartOf="@+id/whiteline2" />
+            <View
+                android:id="@+id/whiteline2"
+                android:layout_width="20dp"
+                android:layout_height="170dp"
+                android:layout_toLeftOf="@+id/greenline"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/white_line"
+                android:layout_marginStart="15dp"
+                android:layout_toStartOf="@+id/greenline" />
+
+            <View
+                android:id="@+id/greenline"
+                android:layout_width="20dp"
+                android:layout_height="140dp"
+                android:layout_marginLeft="15dp"
+                android:layout_toLeftOf="@+id/purpelline2"
+                android:background="@drawable/green_line"
+                android:layout_marginStart="15dp"
+                android:layout_toStartOf="@+id/purpelline2" />
+            <View
+                android:id="@+id/purpelline2"
+                android:layout_width="20dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/purple_line"
+                android:layout_marginStart="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="30dp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="270dp">
+
+            <TextView
+                android:id="@+id/lostandfoubdtextsplashscreen"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:autofillHints=""
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="@string/lost_and_found"
+                android:textColor="#FFFFFF"
+                android:textSize="50sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/welcomeinourappsplashscreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="@string/welcome_in_our_app"
+                android:textColor="#FF9900"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

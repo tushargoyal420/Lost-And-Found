@@ -9,14 +9,14 @@ import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class t1_Splash_screen extends AppCompatActivity {
+public class t1_login_signp_choice extends AppCompatActivity {
     Button msignUpButtonSS, mlogInButton2SS ;
     FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.t1_activity_splash_screen);
+        setContentView(R.layout.t1_activity_login_signup_choice);
 
         mlogInButton2SS = findViewById(R.id.logInButton2SS);
         msignUpButtonSS = findViewById(R.id.signUpButtonSS);

@@ -18,19 +18,13 @@
         <activity android:name=".t6_ILostSomethingActivity" />
         <activity android:name=".t5_HomeScreeen" />
         <activity android:name=".t4_WelcomeNote" />
-        <activity android:name=".t1_Splash_screen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".HomePage" />
         <activity android:name=".t3_LoginActivity" />
-        <activity android:name=".t2_SignupActivity">
+        <activity android:name=".t2_SignupActivity" />
+        <activity android:name=".t1_login_signp_choice" />
+
+        <activity android:name=".t0_splash_screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

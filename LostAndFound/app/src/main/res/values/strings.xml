@@ -10,4 +10,6 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="enter_email_address">Enter email address</string>
+    <string name="lost_and_found">Lost and Found</string>
+    <string name="welcome_in_our_app">Welcome in Our App</string>
 </resources>
