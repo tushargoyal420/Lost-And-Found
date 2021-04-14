@@ -12,4 +12,10 @@
     <string name="enter_email_address">Enter email address</string>
     <string name="lost_and_found">Lost and Found</string>
     <string name="welcome_in_our_app">Welcome in Our App</string>
+    <string name="login">Login</string>
+    <string name="signup">Signup</string>
+    <string name="Congratulationsmessage">Congratulations</string>
+    <string name="userCreatedSucessfully">Your Account created</string>
+    <string name="PleaseCheckEmail">Please Check Email</string>
+    <string name="backgroundroundedeclipse">backgroundroundedeclipse</string>
 </resources>

@@ -68,18 +68,14 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(context, "Please check email for verification.", Toast.LENGTH_SHORT).show();
-//                                        Toast.makeText(t2_SignupActivity.this, "User Created", Toast.LENGTH_SHORT).show();
-//                                        startActivity(new Intent(getApplicationContext(), t4_WelcomeNote.class));
-                                //show user created and move to homepage
+                                Toast.makeText(context, "successful", Toast.LENGTH_SHORT).show();
                             } else {
                                 Toast.makeText(context, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                //show an error message
                             }
                         }
                     });
                     finish();
-                    startActivity(new Intent(getApplicationContext(), t3_LoginActivity.class));
+                    startActivity(new Intent(getApplicationContext(), t2_1_signup_congratulation.class));
                 } else {
                     Toast.makeText(t2_SignupActivity.this, "Could not registered ... Please try again", Toast.LENGTH_SHORT).show();
                 }
@@ -88,12 +84,6 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
 
     }
 
-
-    //        mAlreadyHaveAnAccount.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        startActivity(new Intent(getApplicationContext(), t3_LoginActivity.class));
-//                    } });}});}}
     @Override
     public void onClick(View view) {
         if (view == mSignUpButton) {

@@ -28,7 +28,6 @@ public class t0_splash_screen extends AppCompatActivity {
         mlostandfoubdtextsplashscreen= findViewById(R.id.lostandfoubdtextsplashscreen);
         mwelcomeinourappsplashscreen= findViewById(R.id.welcomeinourappsplashscreen);
 
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

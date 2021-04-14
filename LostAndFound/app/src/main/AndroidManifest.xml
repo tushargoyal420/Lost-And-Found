@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".t1_login_signup_choice"></activity>
+        <activity android:name=".t2_1_signup_congratulation"></activity>
         <activity android:name=".t10_MySettingActivity" />
         <activity android:name=".t9_MessageActivity" />
         <activity android:name=".t8_MyAccountAcivity" />

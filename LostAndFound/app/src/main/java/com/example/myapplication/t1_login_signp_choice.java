@@ -18,13 +18,13 @@ public class t1_login_signp_choice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.t1_activity_login_signup_choice);
 
-        mlogInButton2SS = findViewById(R.id.logInButton2SS);
-        msignUpButtonSS = findViewById(R.id.signUpButtonSS);
+        mlogInButton2SS = findViewById(R.id.loginbutton2);
+        msignUpButtonSS = findViewById(R.id.signupbutton2);
 
         fAuth = FirebaseAuth.getInstance();     //for take instance from the our firebase
 
         if (fAuth.getCurrentUser() != null) {             //if user is already login
-            startActivity(new Intent(getApplicationContext(), t4_WelcomeNote.class));
+            startActivity(new Intent(getApplicationContext(), t5_HomeScreeen.class));
             finish();
         }
 
@@ -34,7 +34,6 @@ public class t1_login_signp_choice extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), t3_LoginActivity.class));
             }
         });
-
         msignUpButtonSS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
