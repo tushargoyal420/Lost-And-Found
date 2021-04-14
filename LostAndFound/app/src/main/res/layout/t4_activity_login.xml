@@ -53,8 +53,7 @@
     <Button
         android:id="@+id/LogInButton"
         android:layout_width="229dp"
-        android:layout_height="50dp
-"
+        android:layout_height="50dp"
         android:background="@drawable/buttonbox"
         android:paddingTop="0px"
         android:paddingBottom="10px"
@@ -70,13 +69,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.785" />
+        app:layout_constraintVertical_bias="0.796" />
 
     <Button
         android:id="@+id/DontHaveAnAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:capitalize="characters"
         android:text="Don't have an account? Signup."
         android:textAllCaps="false"
         android:textColor="#000000"
@@ -85,7 +83,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.845" />
+        app:layout_constraintVertical_bias="0.857" />
 
     <Button
         android:id="@+id/resetPassButton"
@@ -93,9 +91,11 @@
         android:layout_height="wrap_content"
         android:text="Reset password"
         app:backgroundTint="#2B2B2B"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="722dp" />
+        app:layout_constraintTop_toBottomOf="@+id/DontHaveAnAccount"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

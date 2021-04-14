@@ -82,7 +82,7 @@ public class t4_LoginActivity extends AppCompatActivity implements View.OnClickL
             startActivity(new Intent(this, t2_SignupActivity.class));
         } else if (view == mResetPassButton) {
             finish();
-            startActivity(new Intent(getApplicationContext(), t5_HomeScreeen.class));
+            startActivity(new Intent(this, t5_Reset_password.class));
         }
             // Reset password through email
 //            fAuth.getInstance().sendPasswordResetEmail("tusshartg420@gmail.com")

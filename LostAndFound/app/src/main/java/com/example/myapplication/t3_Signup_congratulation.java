@@ -12,7 +12,7 @@ public class t3_Signup_congratulation extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.t2_1_activity_signup_congratulation);
+        setContentView(R.layout.t3_activity_signup_congratulation);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

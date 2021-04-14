@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".t5_Reset_password"></activity>
+        <activity
+            android:name=".t5_Dashboard"
+            android:label="@string/title_activity_t5__dashboard"
+            android:theme="@style/Theme.MyApplication.NoActionBar"></activity>
+        <activity android:name=".t5_Reset_password" />
         <activity android:name=".t3_Signup_congratulation" />
         <activity android:name=".t10_MySettingActivity" />
         <activity android:name=".t9_MessageActivity" />
