@@ -33,7 +33,7 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
         mEmailAddress = findViewById(R.id.EmailAddress);
         mCreatePassword = findViewById(R.id.CreatePassword);
         fAuth = FirebaseAuth.getInstance();     //for take instance from the our firebase
-        mSignUpButton = findViewById(R.id.SignUpButton);
+        mSignUpButton = findViewById(R.id.SignupButton);
         mAlreadyHaveAnAccount = findViewById(R.id.AlreadyHaveAnAccount);
 
         mSignUpButton.setOnClickListener(this);

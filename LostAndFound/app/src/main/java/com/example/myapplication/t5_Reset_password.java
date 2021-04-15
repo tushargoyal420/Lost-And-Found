@@ -30,7 +30,7 @@ public class t5_Reset_password extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.t5_activity_reset_password);
 
         fAuth = FirebaseAuth.getInstance();
-        mresetbutton = findViewById(R.id.backbutton);
+        mresetbutton = findViewById(R.id.resetbutton2);
         mbackbutton = findViewById(R.id.backbutton);
         mresetEmailAddress = findViewById(R.id.resetEmailAddress);
 
@@ -39,13 +39,13 @@ public class t5_Reset_password extends AppCompatActivity implements View.OnClick
     }
 
     private void userLogin() {
-        String resetemail = mresetEmailAddress.getText().toString().trim();
-        if (TextUtils.isEmpty(resetemail)) {
+        String resetmail = mresetEmailAddress.getText().toString().trim();
+        if (TextUtils.isEmpty(resetmail)) {
             mresetEmailAddress.setError("Please enter an Email");
             return;
         }
 
-        fAuth.getInstance().sendPasswordResetEmail(resetemail)
+        FirebaseAuth.getInstance().sendPasswordResetEmail(resetmail)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

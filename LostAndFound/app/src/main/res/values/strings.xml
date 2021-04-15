@@ -12,8 +12,7 @@
     <string name="enter_mail_address">Enter email address</string>
     <string name="lost_and_found">Lost and Found</string>
     <string name="welcome_in_our_app">Welcome in Our App</string>
-    <string name="Congratulationsmessage">Congratulations</string>
-    <string name="userCreatedSucessfully">Your Account created</string>
+    <string name="userCreatedSucessfully">Congratulations <br></br> Your Account created</string>
     <string name="PleaseCheckEmail">Please Check Email</string>
     <string name="backgroundroundedeclipse">backgroundroundedeclipse</string>
     <string name="title_activity_t5__dashboard">t5_Dashboard</string>
@@ -36,4 +35,5 @@
     <string name="already_have_an_account_login">Already have an account? Login.</string>
     <string name="create_a_password">Create a password</string>
     <string name="enter_your_name">Enter your name</string>
+    <string name="backbutton">Back</string>
 </resources>

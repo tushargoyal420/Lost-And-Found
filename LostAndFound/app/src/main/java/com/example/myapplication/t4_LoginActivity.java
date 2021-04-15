@@ -3,7 +3,6 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -22,7 +21,6 @@ public class t4_LoginActivity extends AppCompatActivity implements View.OnClickL
     EditText mEmailAddress2, mLogInPassword;
     Button mLogInButton, mDontHaveAnAccount, mResetPassButton;
     FirebaseAuth fAuth;
-    private Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +29,9 @@ public class t4_LoginActivity extends AppCompatActivity implements View.OnClickL
 
         fAuth = FirebaseAuth.getInstance();
         mEmailAddress2 = findViewById(R.id.EmailAddress2);
-        mLogInPassword = findViewById(R.id.LogInPassword);
+        mLogInPassword = findViewById(R.id.LoginPassword2);
         mDontHaveAnAccount = findViewById(R.id.DontHaveAnAccount);
-        mLogInButton = findViewById(R.id.LogInButton);
+        mLogInButton = findViewById(R.id.LoginButton);
         mResetPassButton = findViewById(R.id.resetPassButton);
 
         mLogInButton.setOnClickListener(this);
@@ -59,12 +57,13 @@ public class t4_LoginActivity extends AppCompatActivity implements View.OnClickL
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = fAuth.getCurrentUser();
+                            assert user != null;
                             if (!user.isEmailVerified()) {
                                 Toast.makeText(t4_LoginActivity.this, "Please Verify email.", Toast.LENGTH_SHORT).show();
                             } else {
                                 // start main activity
                                 finish();
-                                startActivity(new Intent(getApplicationContext(), t5_HomeScreeen.class));
+                                startActivity(new Intent(getApplicationContext(), t6_Dashboard.class));
                             }
                         } else {
                             Toast.makeText(t4_LoginActivity.this, "Authentication Error", Toast.LENGTH_SHORT).show();
@@ -84,15 +83,5 @@ public class t4_LoginActivity extends AppCompatActivity implements View.OnClickL
             finish();
             startActivity(new Intent(this, t5_Reset_password.class));
         }
-            // Reset password through email
-//            fAuth.getInstance().sendPasswordResetEmail("tusshartg420@gmail.com")
-//                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<Void> task) {
-//                            if (task.isSuccessful()) {
-//                                Toast.makeText(context, "Email Sent", Toast.LENGTH_LONG).show();
-//                            }
-//                        }
-//                    });
         }
     }

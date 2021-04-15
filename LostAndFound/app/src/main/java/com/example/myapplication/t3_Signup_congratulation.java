@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 public class t3_Signup_congratulation extends AppCompatActivity {
-    private static final int SPLASH_TIME_OUT = 3000;
+    private static final int SPLASH_TIME_OUT = 3500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

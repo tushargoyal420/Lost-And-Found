@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1f2837"
-
+    android:background="#FF455D5C"
     tools:context=".t0_Splash_screen">
     <LinearLayout
         android:layout_width="match_parent"
@@ -111,7 +110,7 @@
                 android:fontFamily="serif"
                 android:gravity="center"
                 android:text="@string/welcome_in_our_app"
-                android:textColor="#FF9900"
+                android:textColor="#FFFFFF"
                 android:textSize="25sp" />
         </LinearLayout>
 
