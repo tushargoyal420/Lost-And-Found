@@ -17,7 +17,6 @@
             android:theme="@style/Theme.MyApplication.NoActionBar" />
         <activity android:name=".t5_Reset_password" />
         <activity android:name=".t3_Signup_congratulation" />
-        <activity android:name=".t5_HomeScreeen" />
         <activity android:name=".t4_LoginActivity" />
         <activity android:name=".t2_SignupActivity" />
         <activity android:name=".t1_Login_signup_choice" />

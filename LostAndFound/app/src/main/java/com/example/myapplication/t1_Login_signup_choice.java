@@ -24,7 +24,7 @@ public class t1_Login_signup_choice extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();     //for take instance from the our firebase
 
         if (fAuth.getCurrentUser() != null) {             //if user is already login
-            startActivity(new Intent(getApplicationContext(), t5_HomeScreeen.class));
+            startActivity(new Intent(getApplicationContext(), t6_Dashboard.class));
             finish();
         }
 

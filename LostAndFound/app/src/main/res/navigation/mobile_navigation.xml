@@ -6,20 +6,25 @@
     app:startDestination="@+id/nav_home">
 
     <fragment
+        android:id="@+id/nav_foundbar"
+        android:name="com.example.myapplication.ui.found.foundFragment"
+        android:label="@string/found"
+        tools:layout="@layout/found_fragment" />
+    <fragment
         android:id="@+id/nav_home"
         android:name="com.example.myapplication.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.myapplication.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_lostbar"
+        android:name="com.example.myapplication.ui.lost.lostFragment"
+        android:label="@string/lost"
+        tools:layout="@layout/lost_fragment" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.myapplication.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_myaccountbar"
+        android:name="com.example.myapplication.ui.myaccount.myAccountFragment"
+        android:label="@string/my_account"
+        tools:layout="@layout/my_account_fragment" />
 </navigation>
