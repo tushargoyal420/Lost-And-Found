@@ -9,7 +9,7 @@
     >
 
     <ImageButton
-        android:id="@+id/backbut5"
+        android:id="@+id/backbutsettings"
         android:layout_width="40dp"
         android:layout_height="34dp"
         android:background="#FFFFFF"
