@@ -19,6 +19,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -33,9 +35,10 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
     EditText mfullname, mEmailAddress, mCreatePassword;
     Button mSignUpButton, mAlreadyHaveAnAccount;
     private Context context = this;
-    String userID;
-    FirebaseFirestore fStore;
-
+//    String userID;
+//    FirebaseFirestore fStore;
+    private FirebaseDatabase db = FirebaseDatabase.getInstance();
+    private DatabaseReference root = db.getReference().child("users");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +47,7 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
         mEmailAddress = findViewById(R.id.EmailAddress);
         mCreatePassword = findViewById(R.id.CreatePassword);
 
-        fStore = FirebaseFirestore.getInstance();
+//        fStore = FirebaseFirestore.getInstance();
         fAuth = FirebaseAuth.getInstance();     //for take instance from the our firebase
 
         mSignUpButton = findViewById(R.id.SignupButton);
@@ -83,12 +86,19 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
                             if (task.isSuccessful()) {
 
                                 Toast.makeText(context, "successful", Toast.LENGTH_SHORT).show();
-                                userID = fAuth.getCurrentUser().getUid();
-                                DocumentReference documentReference = fStore.collection("users").document(userID);
-                                Map<String,Object> user = new HashMap<>();
-                                user.put("Name",name);
-                                user.put("Email",email);
-                                documentReference.set(user);
+// for realtime database
+                                HashMap<String, String> userMap= new HashMap<>();
+                                userMap.put("Name", name);
+                                userMap.put("Email", email);
+
+                                root.push().setValue(userMap);
+//for Cloud firebase
+//                                userID = fAuth.getCurrentUser().getUid();
+//                                DocumentReference documentReference = fStore.collection("users").document(userID);
+//                                Map<String,Object> user = new HashMap<>();
+//                                user.put("Name",name);
+//                                user.put("Email",email);
+//                                documentReference.set(user);
                             } else {
                                 Toast.makeText(context, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }

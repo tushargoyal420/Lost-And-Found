@@ -37,11 +37,17 @@
     <string name="create_a_password">Create a password</string>
     <string name="enter_your_name">Enter your name</string>
     <string name="backbutton">Back</string>
-    <string name="settings">Settings</string>
     <string name="lost">Lost</string>
     <string name="found">Found</string>
     <string name="logout">Logout</string>
-    <string name="my_account">My Account</string>
     <string name="I_Lost_Something">I Lost Something</string>
     <string name="I_found_something">I Found something</string>
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
+    <string name="lostandfoundtext">LostandfoundText</string>
+    <string name="logoutbutton">LogoutButton</string>
+    <string name="my_account">My Account</string>
+    <string name="settings">Settings</string>
+    <string name="app_image">App Image</string>
+    <string name="messages">Messages</string>
 </resources>

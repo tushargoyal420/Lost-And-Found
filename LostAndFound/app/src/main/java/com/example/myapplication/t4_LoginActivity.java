@@ -63,7 +63,7 @@ public class t4_LoginActivity extends AppCompatActivity implements View.OnClickL
                             } else {
                                 // start main activity
                                 finish();
-                                startActivity(new Intent(getApplicationContext(), t6_Dashboard.class));
+                                startActivity(new Intent(getApplicationContext(), t6_Dashboard_Activity.class));
                             }
                         } else {
                             Toast.makeText(t4_LoginActivity.this, "Authentication Error", Toast.LENGTH_SHORT).show();
@@ -72,6 +72,7 @@ public class t4_LoginActivity extends AppCompatActivity implements View.OnClickL
                     }
                 });
     }
+
     @Override
     public void onClick(View view) {
         if (view == mLogInButton) {

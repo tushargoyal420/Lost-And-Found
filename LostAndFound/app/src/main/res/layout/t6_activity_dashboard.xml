@@ -1,24 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    tools:context=".t6_Dashboard_Activity"
+    android:background="@drawable/backgroundhomescreen2"
+    >
 
-    <include
-        layout="@layout/app_bar_main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
+    <ImageButton
+        android:id="@+id/lostandfoundtext"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" />
-</androidx.drawerlayout.widget.DrawerLayout>
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="14dp"
+        android:background="#FFFFFF"
+        android:contentDescription="@string/lostandfoundtext"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutfirst"
+        app:layout_constraintEnd_toStartOf="@+id/logoutbut"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/lostandfoundlogohomescreen" />
+
+    <ImageButton
+        android:id="@+id/logoutbut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="10dp"
+        android:background="#FFFFFF"
+        android:foregroundGravity="right"
+
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutfirst"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/logouthomescreen"
+        tools:srcCompat="@drawable/logouthomescreen"
+        tools:ignore="RtlHardcoded"
+        android:contentDescription="@string/logoutbutton" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutsecond"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutfirst"
+        tools:layout_editor_absoluteX="203dp"
+        android:layout_marginTop="50dp">
+
+        <ImageButton
+            android:id="@+id/myaccountbut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:contentDescription="@string/my_account"
+            app:srcCompat="@drawable/myaccounthomescreen" />
+
+        <ImageButton
+            android:id="@+id/messagesbut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:contentDescription="@string/messages"
+            app:srcCompat="@drawable/messageshomescreen" />
+
+        <ImageButton
+            android:id="@+id/settingbut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:contentDescription="@string/settings"
+            app:srcCompat="@drawable/settinghomescreen" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutfirst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/lostandfoundimage"
+            android:layout_width="313dp"
+            android:layout_height="294dp"
+            android:layout_marginTop="104dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logoimag"
+            android:contentDescription="@string/app_image" />
+
+        <Button
+            android:id="@+id/ilostsomethingbut2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="@string/I_Lost_Something"
+            android:textColor="#455D5C"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFFFFF"
+            app:cornerRadius="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="522dp" />
+
+        <Button
+            android:id="@+id/ifoundsomethingbut2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="@string/I_found_something"
+            android:textColor="#455D5C"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFFFFF"
+            app:cornerRadius="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="612dp" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

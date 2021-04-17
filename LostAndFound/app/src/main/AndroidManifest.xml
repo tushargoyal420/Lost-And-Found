@@ -11,10 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity
-            android:name=".t6_Dashboard"
-            android:label="@string/title_activity_t5__dashboard"
-            android:theme="@style/Theme.MyApplication.NoActionBar" />
+        <activity android:name=".t11_settings"></activity>
+        <activity android:name=".t10_Message" />
+        <activity android:name=".t9_My_account" />
+        <activity android:name=".t8_I_lost_something" />
+        <activity android:name=".t7_I_found_something" />
+        <activity android:name=".t6_Dashboard_Activity" />
         <activity android:name=".t5_Reset_password" />
         <activity android:name=".t3_Signup_congratulation" />
         <activity android:name=".t4_LoginActivity" />
@@ -23,6 +25,7 @@
         <activity android:name=".t0_Splash_screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
