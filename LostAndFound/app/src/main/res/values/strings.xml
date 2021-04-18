@@ -63,4 +63,7 @@
     <string name="founitmimage">founItmImage</string>
     <string name="found_item_place">Found Item Place</string>
     <string name="found_item_description">Found item description</string>
+    <string name="where_you_lost_it">Where you Lost it</string>
+    <string name="upload_image">Upload Image</string>
+    <string name="select_image">Select Image</string>
 </resources>
