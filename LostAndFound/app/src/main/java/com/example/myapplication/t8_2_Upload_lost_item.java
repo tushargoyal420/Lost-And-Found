@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -30,7 +31,7 @@ import com.google.firebase.storage.UploadTask;
 import java.util.HashMap;
 
 
-public class t8_2_Upload_found_item extends AppCompatActivity {
+public class t8_2_Upload_lost_item extends AppCompatActivity {
 
     ImageButton mbackbutaddlost;
     EditText mnameoflostitem, mtypeoflostitem, mlostplace, mdescriptionoflostitem, mlostother;
@@ -46,7 +47,7 @@ public class t8_2_Upload_found_item extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.t82_activity_upload_found_item);
+        setContentView(R.layout.t82_activity_upload_lost_item);
 
         mnameoflostitem=findViewById(R.id.nameoflostitem);
         mtypeoflostitem=findViewById(R.id.typeoflostitem);
@@ -76,16 +77,6 @@ public class t8_2_Upload_found_item extends AppCompatActivity {
                 startActivityForResult(galleryIntent, 2);
             }
         });
-//        muploadfoundimagebut.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if(imageUri != null){
-//                    uploadimgtoFirebase(imageUri);
-//                }else{
-//                    Toast.makeText(t8_2_Upload_found_item.this, "Please select image", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
     }
 
     @Override
@@ -96,7 +87,7 @@ public class t8_2_Upload_found_item extends AppCompatActivity {
             maddfoundimgepreview.setImageURI(imageUri);
         }
     }
-    private void uploadimgtoFirebase(Uri uri){
+    public void uploadimgtoFirebase(Uri uri){
 
         StorageReference fileRef = reference.child(System.currentTimeMillis() + "." + getFileExtension(uri));
         fileRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -106,8 +97,43 @@ public class t8_2_Upload_found_item extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
                         Model model = new Model(uri.toString());
-                        String modelId = root.push().getKey();
-                        root.child(modelId).setValue(model);
+                        String nameoflostitem = mnameoflostitem.getText().toString();
+                        String typeoflostitem = mtypeoflostitem.getText().toString();
+                        String lostplace = mlostplace.getText().toString();
+                        String descriptionoflostitem = mdescriptionoflostitem.getText().toString();
+                        String lostother = mlostother.getText().toString();
+                        if (TextUtils.isEmpty(nameoflostitem)) {
+                            mnameoflostitem.setError("Please enter an name of item");
+                            return;
+                        }
+                        if (TextUtils.isEmpty(typeoflostitem)) {
+                            mtypeoflostitem.setError("Please enter an type of item");
+                            return;
+                        }
+                        if (TextUtils.isEmpty(lostplace)) {
+                            mlostplace.setError("Please enter place");
+                            return;
+                        }
+                        if (TextUtils.isEmpty(descriptionoflostitem)) {
+                            mdescriptionoflostitem.setError("Please enter description");
+                        }
+                        else{
+                            HashMap<String, String> userMap = new HashMap<>();
+                                userMap.put("Name of item", nameoflostitem);
+                                userMap.put("Type of item", typeoflostitem);
+                                userMap.put("Place", lostplace);
+                                userMap.put("Description", descriptionoflostitem);
+                                userMap.put("Other", lostother);
+
+                                HashMap<Object, Object> dataMap = new HashMap<>();
+                                    dataMap.put("Image", model);
+                                    dataMap.put("details",userMap);
+
+                            root.push().setValue(dataMap);
+
+                            Toast.makeText(t8_2_Upload_lost_item.this, "Uploaded successfully", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
                     }
                 });
             }
@@ -118,7 +144,7 @@ public class t8_2_Upload_found_item extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(t8_2_Upload_found_item.this, "Uploading Failed!.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(t8_2_Upload_lost_item.this, "Uploading Failed!.", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -127,53 +153,33 @@ public class t8_2_Upload_found_item extends AppCompatActivity {
         MimeTypeMap mime= MimeTypeMap.getSingleton();
         return mime.getExtensionFromMimeType(cr.getType(mUri));
     }
-    private void uploadlostitem(){
-        String nameoflostitem = mnameoflostitem.getText().toString();
-        String typeoflostitem = mtypeoflostitem.getText().toString();
-        String lostplace = mlostplace.getText().toString();
-        String descriptionoflostitem = mdescriptionoflostitem.getText().toString();
-        String lostother = mlostother.getText().toString();
-//        String userMap1;
+    public void uploadlostitem(){
         if(imageUri == null){
-//            Toast.makeText(t8_2_Upload_found_item.this, "Please select image", Toast.LENGTH_SHORT).show();
-            muploadfoundimagebut.setError("Please Select image");
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG) .setAction("Action", null).show();
+
+            Toast.makeText(t8_2_Upload_lost_item.this, "Please select image", Toast.LENGTH_SHORT).show();
+//            muploadfoundimagebut.setError("Please Select image");
             return;
         }
-        if (TextUtils.isEmpty(nameoflostitem)) {
-            mnameoflostitem.setError("Please enter an name of item");
-            return;
-        }
-        if (TextUtils.isEmpty(typeoflostitem)) {
-            mtypeoflostitem.setError("Please enter an type of item");
-            return;
-        }
-        if (TextUtils.isEmpty(lostplace)) {
-            mlostplace.setError("Please enter place");
-            return;
-        }
-        if (TextUtils.isEmpty(descriptionoflostitem)) {
-            mdescriptionoflostitem.setError("Please enter description");
-        }
+//        if (TextUtils.isEmpty(nameoflostitem)) {
+//            mnameoflostitem.setError("Please enter an name of item");
+//            return;
+//        }
+//        if (TextUtils.isEmpty(typeoflostitem)) {
+//            mtypeoflostitem.setError("Please enter an type of item");
+//            return;
+//        }
+//        if (TextUtils.isEmpty(lostplace)) {
+//            mlostplace.setError("Please enter place");
+//            return;
+//        }
+//        if (TextUtils.isEmpty(descriptionoflostitem)) {
+//            mdescriptionoflostitem.setError("Please enter description");
+//        }
         else {
             uploadimgtoFirebase(imageUri);
-
-            HashMap<String, String> userMap = new HashMap<>();
-            userMap.put("Name of item", nameoflostitem);
-            userMap.put("Type of item", typeoflostitem);
-            userMap.put("Place", lostplace);
-            userMap.put("Description", descriptionoflostitem);
-            userMap.put("Other", lostother);
-//            userMap.put("imageurl", imageUri);
-            root.push().setValue(userMap);
-            Toast.makeText(t8_2_Upload_found_item.this, "Uploaded successfully", Toast.LENGTH_SHORT).show();
-//            startActivity(new Intent(this, t8_2_Upload_found_item.class));
-            finish();
         }
     }
-//    public void uploaddata(HashMap<String, String> userMap){
-//        root.push().setValue(userMap);
-//    }
-
     public void onClick(View view) {
         if (view == mbackbutaddlost) {
             finish();

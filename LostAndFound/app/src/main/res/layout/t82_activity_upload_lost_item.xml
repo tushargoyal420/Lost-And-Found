@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".t8_2_Upload_found_item"
+    tools:context=".t8_2_Upload_lost_item"
     android:background="@drawable/backgroundhomescreen"
     >
 

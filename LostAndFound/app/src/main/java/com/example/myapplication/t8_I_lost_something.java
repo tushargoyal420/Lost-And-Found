@@ -27,7 +27,7 @@ public class t8_I_lost_something extends AppCompatActivity {
             finish();
         }
         else if(view== maddlostitembut){
-            startActivity(new Intent(this, t8_2_Upload_found_item.class));
+            startActivity(new Intent(this, t8_2_Upload_lost_item.class));
         }
     }
 
