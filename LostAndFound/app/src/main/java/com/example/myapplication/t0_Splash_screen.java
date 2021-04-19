@@ -13,7 +13,7 @@ public class t0_Splash_screen extends AppCompatActivity {
     View mpurpleeline, mwhiteline, mredline, mwhiteline2, mgreenline,mpurpleline2;
     TextView mlostandfoubdtextsplashscreen, mwelcomeinourappsplashscreen;
 
-    private static final int SPLASH_TIME_OUT = 1000;
+    private static final int SPLASH_TIME_OUT = 4000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
