@@ -19,7 +19,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -34,9 +33,9 @@ import java.util.HashMap;
 public class t8_2_Upload_lost_item extends AppCompatActivity {
 
     ImageButton mbackbutaddlost;
-    EditText mnameoflostitem, mtypeoflostitem, mlostplace, mdescriptionoflostitem, mlostother;
-    Button mlostsubmitbut,muploadfoundimagebut,mselectfoundimagebut;
-    ImageView maddfoundimgepreview;
+    EditText mnameoflostitem, mlostplace, mdescriptionoflostitem, mlostother;
+    Button mlostsubmitbut,muploadlostimagebut,mselectlostimagebut;
+    ImageView maddlostimgepreview;
 
     FirebaseAuth fAuth;
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
@@ -50,15 +49,15 @@ public class t8_2_Upload_lost_item extends AppCompatActivity {
         setContentView(R.layout.t82_activity_upload_lost_item);
 
         mnameoflostitem=findViewById(R.id.nameoflostitem);
-        mtypeoflostitem=findViewById(R.id.typeoflostitem);
+//        mtypeoflostitem=findViewById(R.id.typeoflostitem);
         mlostplace=findViewById(R.id.lostplace);
         mdescriptionoflostitem=findViewById(R.id.descriptionoflostitem);
         mlostother=findViewById(R.id.lostother);
 
         //Image
-        maddfoundimgepreview =findViewById(R.id.addfoundimgpreview);
-        muploadfoundimagebut =findViewById(R.id.uploadfoundimagebut);
-        //mselectfoundimagebut =findViewById(R.id.selectfoundimagebut);
+        maddlostimgepreview =findViewById(R.id.addfoundimgpreview);
+        muploadlostimagebut =findViewById(R.id.uploadlostimagebut);
+        //mselectlostimagebut =findViewById(R.id.selectlostimagebut);
 
         fAuth = FirebaseAuth.getInstance();     //for take instance from the our firebase
 
@@ -68,7 +67,7 @@ public class t8_2_Upload_lost_item extends AppCompatActivity {
         mbackbutaddlost = findViewById(R.id.backbutaddlost);
         mbackbutaddlost.setOnClickListener(this::onClick);
 
-        muploadfoundimagebut.setOnClickListener(new View.OnClickListener() {
+        muploadlostimagebut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent galleryIntent = new Intent();
@@ -84,7 +83,7 @@ public class t8_2_Upload_lost_item extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 2 && resultCode == RESULT_OK && data != null){
             imageUri = data.getData();
-            maddfoundimgepreview.setImageURI(imageUri);
+            maddlostimgepreview.setImageURI(imageUri);
         }
     }
     public void uploadimgtoFirebase(Uri uri){
@@ -98,7 +97,7 @@ public class t8_2_Upload_lost_item extends AppCompatActivity {
                     public void onSuccess(Uri uri) {
                         Model model = new Model(uri.toString());
                         String nameoflostitem = mnameoflostitem.getText().toString();
-                        String typeoflostitem = mtypeoflostitem.getText().toString();
+//                        String typeoflostitem = mtypeoflostitem.getText().toString();
                         String lostplace = mlostplace.getText().toString();
                         String descriptionoflostitem = mdescriptionoflostitem.getText().toString();
                         String lostother = mlostother.getText().toString();
@@ -106,10 +105,10 @@ public class t8_2_Upload_lost_item extends AppCompatActivity {
                             mnameoflostitem.setError("Please enter an name of item");
                             return;
                         }
-                        if (TextUtils.isEmpty(typeoflostitem)) {
-                            mtypeoflostitem.setError("Please enter an type of item");
-                            return;
-                        }
+//                        if (TextUtils.isEmpty(typeoflostitem)) {
+//                            mtypeoflostitem.setError("Please enter an type of item");
+//                            return;
+//                        }
                         if (TextUtils.isEmpty(lostplace)) {
                             mlostplace.setError("Please enter place");
                             return;
@@ -120,7 +119,7 @@ public class t8_2_Upload_lost_item extends AppCompatActivity {
                         else{
                             HashMap<String, String> userMap = new HashMap<>();
                                 userMap.put("Name of item", nameoflostitem);
-                                userMap.put("Type of item", typeoflostitem);
+//                                userMap.put("Type of item", typeoflostitem);
                                 userMap.put("Place", lostplace);
                                 userMap.put("Description", descriptionoflostitem);
                                 userMap.put("Other", lostother);
@@ -131,7 +130,7 @@ public class t8_2_Upload_lost_item extends AppCompatActivity {
 
                             root.push().setValue(dataMap);
 
-                            Toast.makeText(t8_2_Upload_lost_item.this, "Uploaded successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(t8_2_Upload_lost_item.this, "Congratualtions !! Uploaded successfully", Toast.LENGTH_SHORT).show();
                             finish();
                         }
                     }
@@ -153,39 +152,24 @@ public class t8_2_Upload_lost_item extends AppCompatActivity {
         MimeTypeMap mime= MimeTypeMap.getSingleton();
         return mime.getExtensionFromMimeType(cr.getType(mUri));
     }
-    public void uploadlostitem(){
+    public void uploadlostitemimage(){
         if(imageUri == null){
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG) .setAction("Action", null).show();
-
             Toast.makeText(t8_2_Upload_lost_item.this, "Please select image", Toast.LENGTH_SHORT).show();
-//            muploadfoundimagebut.setError("Please Select image");
+//            muploadlostimagebut.setError("Please Select image");
             return;
         }
-//        if (TextUtils.isEmpty(nameoflostitem)) {
-//            mnameoflostitem.setError("Please enter an name of item");
-//            return;
-//        }
-//        if (TextUtils.isEmpty(typeoflostitem)) {
-//            mtypeoflostitem.setError("Please enter an type of item");
-//            return;
-//        }
-//        if (TextUtils.isEmpty(lostplace)) {
-//            mlostplace.setError("Please enter place");
-//            return;
-//        }
-//        if (TextUtils.isEmpty(descriptionoflostitem)) {
-//            mdescriptionoflostitem.setError("Please enter description");
-//        }
         else {
             uploadimgtoFirebase(imageUri);
         }
     }
+
+
     public void onClick(View view) {
         if (view == mbackbutaddlost) {
             finish();
         }
         else if(view== mlostsubmitbut){
-            uploadlostitem();
+            uploadlostitemimage();
         }
     }
 }

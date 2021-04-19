@@ -15,7 +15,6 @@
         android:layout_marginTop="8dp"
         android:background="#FFFFFF"
         android:contentDescription="@string/I_Lost_Something"
-        app:layout_constraintBottom_toTopOf="@+id/lostlayout1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.199"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,42 +41,44 @@
         android:id="@+id/lostlayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
+        android:paddingTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.207">
+        app:layout_constraintTop_toBottomOf="@+id/ilostsomethingheadtext"
+        app:layout_constraintVertical_bias="0.05">
 
-        <ImageView
-            android:id="@+id/addfoundimgpreview"
-            android:layout_width="375dp"
-            android:layout_height="114dp"
-            android:layout_marginTop="10dp"
-            android:background="#FFFFFF"
-            android:contentDescription="@string/addimage"
-            app:srcCompat="@drawable/addimage" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-<!--        <Button-->
-<!--            android:id="@+id/selectfoundimagebut"-->
-<!--            android:layout_width="375dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="5dp"-->
-<!--            android:text="@string/select_image"-->
-<!--            android:textColor="@color/themecolor"-->
-<!--            android:textStyle="bold"-->
-<!--            app:backgroundTint="#FFFFFF" />-->
+            <ImageView
+                android:id="@+id/addfoundimgpreview"
+                android:layout_width="250dp"
+                android:layout_height="180dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#FFFFFF"
+                android:contentDescription="@string/addimage"
+                app:srcCompat="@drawable/addimage" />
 
-        <Button
-            android:id="@+id/uploadfoundimagebut"
-            android:layout_width="375dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/upload_image"
-            android:textColor="@color/themecolor"
-            android:textStyle="bold"
-            app:backgroundTint="#FFFFFF" />
+            <Button
+                android:id="@+id/uploadlostimagebut"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:text="@string/select_image"
+                android:textColor="@color/themecolor"
+                android:textStyle="bold"
+                app:backgroundTint="#FFFFFF" />
+
+
+        </LinearLayout>
+
 
         <EditText
             android:id="@+id/nameoflostitem"
@@ -88,21 +89,6 @@
             android:background="@drawable/backgrountedittext"
             android:ems="10"
             android:hint="@string/name_of_item"
-            android:inputType="textPersonName"
-            android:padding="15dp"
-            android:shadowColor="#000000"
-            android:textColor="@color/themecolor"
-            android:textColorHint="#A4455D5C" />
-
-        <EditText
-            android:id="@+id/typeoflostitem"
-            android:layout_width="375dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:autofillHints=""
-            android:background="@drawable/backgrountedittext"
-            android:ems="10"
-            android:hint="@string/type_of_item"
             android:inputType="textPersonName"
             android:padding="15dp"
             android:shadowColor="#000000"
@@ -158,7 +144,7 @@
             android:id="@+id/lostsubmitbut"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:padding="15dp"
             android:text="@string/submitbutton"
             android:textColor="#455D5C"
