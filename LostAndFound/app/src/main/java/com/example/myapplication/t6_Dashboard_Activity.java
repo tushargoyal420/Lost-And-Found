@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class t6_Dashboard_Activity extends AppCompatActivity implements View.OnClickListener {
     ImageButton mlogoutbut, mmessagesbut, mmyaccountbut, msettingbut;
-    Button milostsomethingbut2, mifoundsomethingbut;
+    Button milostsomethingbut2, mifoundsomethingbut2;
     ImageView mlostandfoundimage;
     FirebaseAuth fAuth;
 
@@ -22,14 +22,14 @@ public class t6_Dashboard_Activity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.t6_activity_dashboard);
         fAuth = FirebaseAuth.getInstance();
-        mifoundsomethingbut = findViewById(R.id.ifoundsomethingbut2);
+        mifoundsomethingbut2 = findViewById(R.id.ifoundsomethingbut2);
         milostsomethingbut2 = findViewById(R.id.ilostsomethingbut2);
         mmyaccountbut = findViewById(R.id.myaccountbut);
         mmessagesbut = findViewById(R.id.messagesbut);
         msettingbut = findViewById(R.id.settingbut);
         mlogoutbut = findViewById(R.id.logoutbut);
 
-        mifoundsomethingbut.setOnClickListener(this);
+        mifoundsomethingbut2.setOnClickListener(this);
         milostsomethingbut2.setOnClickListener(this);
         mmyaccountbut.setOnClickListener(this);
         mmessagesbut.setOnClickListener(this);
@@ -42,7 +42,7 @@ public class t6_Dashboard_Activity extends AppCompatActivity implements View.OnC
             fAuth.signOut();
             finish();
             startActivity(new Intent(this, t1_Login_signup_choice.class));
-        } else if (view == mifoundsomethingbut) {
+        } else if (view == mifoundsomethingbut2) {
 //            finish();
             startActivity(new Intent(this, t7_I_found_something.class));
         }

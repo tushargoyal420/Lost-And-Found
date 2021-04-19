@@ -1,7 +1,5 @@
 package com.example.myapplication;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentResolver;
@@ -17,13 +15,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GetTokenResult;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -32,6 +30,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.util.HashMap;
+
+import android.os.Bundle;
 
 public class t7_I_found_something extends AppCompatActivity {
     ImageButton mbackbutfound, mfoundaddimage;
@@ -49,7 +49,6 @@ public class t7_I_found_something extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.t7_activity_i_found_something);
-
         mnameofitem=findViewById(R.id.nameofitem);
 //        mtypeofitem=findViewById(R.id.typeofitem);
         mplace=findViewById(R.id.place);
@@ -58,7 +57,7 @@ public class t7_I_found_something extends AppCompatActivity {
 
         //Image
         maddfoundimgepreview =findViewById(R.id.addfoundimgpreview);
-        muploadfoundimagebut =findViewById(R.id.uploadlostimagebut);
+        muploadfoundimagebut =findViewById(R.id.uploadfoundimagebut);
 
         fAuth = FirebaseAuth.getInstance();     //for take instance from the our firebase
 
@@ -77,8 +76,8 @@ public class t7_I_found_something extends AppCompatActivity {
                 startActivityForResult(galleryIntent, 2);
             }
         });
-    }
 
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -167,16 +166,12 @@ public class t7_I_found_something extends AppCompatActivity {
         }
     }
 
-
-
     public void onClick(View view) {
         if (view == mbackbutfound) {
             finish();
         }
         else if(view== mfoundsubmitbut){
             uploadfounditemimage();
-//            Snackbar.make(view, "Data submitted successfully", Snackbar.LENGTH_LONG)
-//                    .setAction("Action", null).show();
         }
     }
 
