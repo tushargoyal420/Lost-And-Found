@@ -17,7 +17,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -29,13 +28,9 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.util.HashMap;
-
-import android.os.Bundle;
-
-public class t7_I_found_something extends AppCompatActivity {
-    ImageButton mbackbutfound, mfoundaddimage;
-    EditText mnameofitem, mtypeofitem, mplace, mdescriptionofitem, mother;
+public class t7_2_upload_found_item extends AppCompatActivity {
+    ImageButton mbackbutfound;
+    EditText mnameofitem, mplace, mdescriptionofitem, mdate;
     Button mfoundsubmitbut, muploadfoundimagebut;
     ImageView maddfoundimgepreview;
 
@@ -44,20 +39,22 @@ public class t7_I_found_something extends AppCompatActivity {
     private DatabaseReference root = db.getReference().child("founditems");
     private StorageReference reference=  FirebaseStorage.getInstance().getReference();
     private Uri imageUri;
+    Model model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.t7_activity_i_found_something);
+        setContentView(R.layout.t7_2_activity_upload_found_item);
         mnameofitem=findViewById(R.id.nameofitem);
-//        mtypeofitem=findViewById(R.id.typeofitem);
         mplace=findViewById(R.id.place);
         mdescriptionofitem=findViewById(R.id.descriptionofitem);
-        mother=findViewById(R.id.other);
+        mdate=findViewById(R.id.date);
 
         //Image
         maddfoundimgepreview =findViewById(R.id.addfoundimgpreview);
         muploadfoundimagebut =findViewById(R.id.uploadfoundimagebut);
+
+        model = new Model();
 
         fAuth = FirebaseAuth.getInstance();     //for take instance from the our firebase
 
@@ -76,7 +73,6 @@ public class t7_I_found_something extends AppCompatActivity {
                 startActivityForResult(galleryIntent, 2);
             }
         });
-
     }
 
     @Override
@@ -97,20 +93,17 @@ public class t7_I_found_something extends AppCompatActivity {
                 fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
-                        Model model = new Model(uri.toString());
+//                        Model model = new Model(uri.toString());
+                        model.setImageUri(uri.toString());
+
                         String nameoflostitem = mnameofitem.getText().toString();
-//                        String typeoflostitem = mtypeoflostitem.getText().toString();
                         String lostplace = mplace.getText().toString();
                         String descriptionoflostitem = mdescriptionofitem.getText().toString();
-                        String lostother = mother.getText().toString();
+                        String date = mdate.getText().toString();
                         if (TextUtils.isEmpty(nameoflostitem)) {
                             mnameofitem.setError("Please enter an name of item");
                             return;
                         }
-//                        if (TextUtils.isEmpty(typeoflostitem)) {
-//                            mtypeoflostitem.setError("Please enter an type of item");
-//                            return;
-//                        }
                         if (TextUtils.isEmpty(lostplace)) {
                             mplace.setError("Please enter place");
                             return;
@@ -118,21 +111,18 @@ public class t7_I_found_something extends AppCompatActivity {
                         if (TextUtils.isEmpty(descriptionoflostitem)) {
                             mdescriptionofitem.setError("Please enter description");
                         }
+                        if (TextUtils.isEmpty(date)) {
+                            mdate.setError("Please enter Date");
+                        }
+
                         else{
-                            HashMap<String, String> userMap = new HashMap<>();
-                            userMap.put("Name of item", nameoflostitem);
-//                          userMap.put("Type of item", typeoflostitem);
-                            userMap.put("Place", lostplace);
-                            userMap.put("Description", descriptionoflostitem);
-                            userMap.put("Other", lostother);
+                            model.setName_of_Item(nameoflostitem);
+                            model.setPlace(lostplace);
+                            model.setDescription(descriptionoflostitem);
+                            model.setDate(date);
+                            root.push().setValue(model);
 
-                            HashMap<Object, Object> dataMap = new HashMap<>();
-                            dataMap.put("Image", model);
-                            dataMap.put("details",userMap);
-
-                            root.push().setValue(dataMap);
-
-                            Toast.makeText(t7_I_found_something.this, "Congratualtions !! Uploaded successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(t7_2_upload_found_item.this, "Congratualtions !! Uploaded successfully", Toast.LENGTH_SHORT).show();
                             finish();
                         }
                     }
@@ -145,7 +135,7 @@ public class t7_I_found_something extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(t7_I_found_something.this, "Uploading Failed!.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(t7_2_upload_found_item.this, "Uploading Failed!.", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -158,8 +148,7 @@ public class t7_I_found_something extends AppCompatActivity {
 
     private void uploadfounditemimage(){
         if(imageUri == null){
-            Toast.makeText(t7_I_found_something.this, "Please select image", Toast.LENGTH_SHORT).show();
-//            muploadlostimagebut.setError("Please Select image");
+            Toast.makeText(t7_2_upload_found_item.this, "Please select image", Toast.LENGTH_SHORT).show();
             return;
         }else {
             uploadimgtoFirebase(imageUri);
@@ -169,10 +158,8 @@ public class t7_I_found_something extends AppCompatActivity {
     public void onClick(View view) {
         if (view == mbackbutfound) {
             finish();
-        }
-        else if(view== mfoundsubmitbut){
+        }else if(view== mfoundsubmitbut){
             uploadfounditemimage();
         }
     }
-
 }

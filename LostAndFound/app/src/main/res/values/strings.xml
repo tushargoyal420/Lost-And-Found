@@ -2,9 +2,6 @@
     <string name="app_name">Lost and Found
     </string>
     <string name="title_activity_home_screen">HomeScreen</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
@@ -50,11 +47,11 @@
     <string name="settings">Settings</string>
     <string name="app_image">App Image</string>
     <string name="messages">Messages</string>
-    <string name="name_of_item">Name of item</string>
+    <!--    <string name="name_of_item">Name of item</string>-->
     <string name="type_of_item">Type of item</string>
     <string name="where_you_find_it">Where you find it</string>
     <string name="description_of_item">Description of Item</string>
-    <string name="other">Other</string>
+    <string name="other">Date</string>
     <string name="addimage">AddImage</string>
     <string name="submitbutton">Submit </string>
     <string name="search">Search</string>
@@ -66,4 +63,11 @@
     <string name="where_you_lost_it">Where you Lost it</string>
     <string name="upload_image">Upload Image</string>
     <string name="select_image">Select Image</string>
+    <string name="name_of_item">Name of item</string>
+    <string name="dummy">dummy</string>
+    <string name="dummydes">dummydes</string>
+    <string name="lost_items">Lost Items </string>
+    <string name="found_items">Found Items </string>
+    <string name="customercare">customercare</string>
+    <string name="ratings">ratings</string>
 </resources>

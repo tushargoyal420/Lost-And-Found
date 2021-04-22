@@ -7,18 +7,75 @@
     tools:context=".t11_settings"
     android:background="@drawable/backgroundhomescreen"
     >
-
     <ImageButton
-        android:id="@+id/backbutsettings"
-        android:layout_width="40dp"
-        android:layout_height="34dp"
+        android:id="@+id/backbuttonsettings"
+        android:layout_width="39dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="11dp"
         android:background="#FFFFFF"
         android:contentDescription="@string/backbutton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.010"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/backbut" />
+
+    <ImageView
+        android:id="@+id/settingsheadingtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/backbuttonsettings"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/settingsheadtext"
+        android:contentDescription="@string/settings" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsheadingtext">
+
+        <ImageButton
+            android:id="@+id/logoutlistbut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/logoutlistbutton"
+            android:contentDescription="@string/logout" />
+
+        <ImageButton
+            android:id="@+id/customercarelistbut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/customercarelistbutton"
+            android:contentDescription="@string/customercare" />
+
+        <ImageButton
+            android:id="@+id/ratinglistbut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/ratinglistbutton"
+            android:contentDescription="@string/ratings" />
+
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

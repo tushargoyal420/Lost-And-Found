@@ -4,38 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/loginsignupscreen"
     tools:context=".t1_Login_signup_choice">
 
 
-    <Button
-        android:id="@+id/loginbutton2"
-        android:layout_width="239dp"
-        android:layout_height="58dp"
-        android:text="@string/login"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="20sp"
-        app:backgroundTint="#455D5C"
-        app:cornerRadius="20sp"
+    <LinearLayout
+        android:id="@+id/wholesignupscreenlinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bgmain"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingBottom="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupbutton"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/signupbutton"
-        android:layout_width="239dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="656dp"
-        android:text="@string/signup"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="20sp"
-        app:backgroundTint="#455D5C"
-        app:cornerRadius="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/signupcardlinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectanglecard"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="60dp"
+        >
+
+        <Button
+            android:id="@+id/loginbutton2"
+            android:layout_width="239dp"
+            android:layout_height="58dp"
+            android:text="@string/login"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="20sp"
+            app:backgroundTint="#455D5C"
+            app:cornerRadius="20sp"
+            />
+
+        <Button
+            android:id="@+id/signupbutton"
+            android:layout_width="239dp"
+            android:layout_height="58dp"
+            android:text="@string/signup"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="20sp"
+            app:backgroundTint="#455D5C"
+            app:cornerRadius="20sp" />
+        </LinearLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

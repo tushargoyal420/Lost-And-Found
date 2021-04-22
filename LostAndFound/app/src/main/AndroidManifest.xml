@@ -11,12 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".t8_2_Upload_lost_item"></activity>
+        <activity android:name=".t8_1_show_lost_item"></activity>
+        <activity android:name=".t8_2_Upload_lost_item" />
         <activity android:name=".t11_settings" />
         <activity android:name=".t10_Message" />
         <activity android:name=".t9_My_account" />
-        <activity android:name=".t8_I_lost_something" />
-        <activity android:name=".t7_I_found_something" />
+        <activity android:name=".t7_1_show_found_items" />
+        <activity android:name=".t7_2_upload_found_item" />
         <activity android:name=".t6_Dashboard_Activity" />
         <activity android:name=".t5_Reset_password" />
         <activity android:name=".t3_Signup_congratulation" />

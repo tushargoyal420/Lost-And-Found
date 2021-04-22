@@ -5,83 +5,98 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".t6_Dashboard_Activity"
-    android:background="@drawable/backgroundhomescreen2"
+    android:background="@drawable/backgroundhomescreen"
     >
+
+    <!--    <ImageButton-->
+<!--        android:id="@+id/logoutbut"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="right"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:background="#FFFFFF"-->
+<!--        android:foregroundGravity="right"-->
+
+<!--        app:layout_constraintBottom_toTopOf="@+id/linearLayoutfirst"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.958"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="1.0"-->
+<!--        app:srcCompat="@drawable/logouthomescreen"-->
+<!--        tools:srcCompat="@drawable/logouthomescreen"-->
+<!--        tools:ignore="RtlHardcoded"-->
+<!--        android:contentDescription="@string/logoutbutton" />-->
 
     <ImageButton
         android:id="@+id/lostandfoundtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="14dp"
         android:background="#FFFFFF"
         android:contentDescription="@string/lostandfoundtext"
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutfirst"
-        app:layout_constraintEnd_toStartOf="@+id/logoutbut"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/lostandfoundlogohomescreen" />
-
-    <ImageButton
-        android:id="@+id/logoutbut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="10dp"
-        android:background="#FFFFFF"
-        android:foregroundGravity="right"
-
-        app:layout_constraintBottom_toTopOf="@+id/linearLayoutfirst"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/logouthomescreen"
-        tools:srcCompat="@drawable/logouthomescreen"
-        tools:ignore="RtlHardcoded"
-        android:contentDescription="@string/logoutbutton" />
+        app:srcCompat="@drawable/lostandfoundlogohomescreen" />
 
     <LinearLayout
-        android:id="@+id/linearLayoutsecond"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutfirst"
-        tools:layout_editor_absoluteX="203dp"
-        android:layout_marginTop="50dp">
+        android:background="@color/white"
+        >
 
-        <ImageButton
-            android:id="@+id/myaccountbut"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/linearLayoutsecond"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:contentDescription="@string/my_account"
-            app:srcCompat="@drawable/myaccounthomescreen" />
+            android:orientation="horizontal"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutfirst"
+            app:layout_constraintVertical_bias="0.674">
 
-        <ImageButton
-            android:id="@+id/messagesbut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:contentDescription="@string/messages"
-            app:srcCompat="@drawable/messageshomescreen" />
+            <ImageButton
+                android:id="@+id/myaccountbut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:contentDescription="@string/my_account"
+                app:srcCompat="@drawable/myaccounthomescreen" />
 
-        <ImageButton
-            android:id="@+id/settingbut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:contentDescription="@string/settings"
-            app:srcCompat="@drawable/settinghomescreen" />
+            <ImageButton
+                android:id="@+id/messagesbut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:contentDescription="@string/messages"
+                app:srcCompat="@drawable/messageshomescreen" />
+
+            <ImageButton
+                android:id="@+id/settingbut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:contentDescription="@string/settings"
+                app:srcCompat="@drawable/settinghomescreen" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -94,28 +109,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/lostandfoundimage"
             android:layout_width="313dp"
             android:layout_height="294dp"
-            android:layout_marginTop="104dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            android:contentDescription="@string/app_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logoimag"
-            android:contentDescription="@string/app_image" />
+            app:srcCompat="@drawable/logoimag" />
 
         <Button
             android:id="@+id/ilostsomethingbut2"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:text="@string/I_Lost_Something"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:text="@string/lost"
             android:textColor="#455D5C"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textStyle="bold"
             app:backgroundTint="#FFFFFF"
             app:cornerRadius="30dp"
@@ -126,12 +142,12 @@
 
         <Button
             android:id="@+id/ifoundsomethingbut2"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:text="@string/I_found_something"
+            android:padding="10dp"
+            android:text="@string/found"
             android:textColor="#455D5C"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textStyle="bold"
             app:backgroundTint="#FFFFFF"
             app:cornerRadius="30dp"
