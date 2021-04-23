@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class t8_1_show_lost_item extends AppCompatActivity {
+public class t7_1_show_lost_item extends AppCompatActivity {
 
     ImageButton mbacktouploadlostbutton, maddlostitembut;
 
@@ -65,8 +65,8 @@ public class t8_1_show_lost_item extends AppCompatActivity {
         if (view == mbacktouploadlostbutton) {
             finish();
         }else if (view == maddlostitembut){
-            startActivity(new Intent(this, t8_2_Upload_lost_item.class));
+            finish();
+            startActivity(new Intent(this, t7_2_Upload_lost_item.class));
         }
     }
-
 }

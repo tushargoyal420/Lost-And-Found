@@ -1,7 +1,5 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
@@ -17,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -28,43 +27,46 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-public class t7_2_upload_found_item extends AppCompatActivity {
-    ImageButton mbackbutfound;
-    EditText mnameofitem, mplace, mdescriptionofitem, mdate;
-    Button mfoundsubmitbut, muploadfoundimagebut;
-    ImageView maddfoundimgepreview;
+public class t7_2_Upload_lost_item extends AppCompatActivity {
+
+    ImageButton mbackbutaddlost;
+    EditText mnameoflostitem, mlostplace, mdescriptionoflostitem, mlostdate;
+    Button mlostsubmitbut, mselectlostimagebut;
+    ImageView maddlostimgepreview;
 
     FirebaseAuth fAuth;
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
-    private DatabaseReference root = db.getReference().child("founditems");
+    private DatabaseReference root = db.getReference().child("lostitems");
     private StorageReference reference=  FirebaseStorage.getInstance().getReference();
-    private Uri imageUri;
+
     Model model;
 
+    private Uri imageUri;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.t7_2_activity_upload_found_item);
-        mnameofitem=findViewById(R.id.nameofitem);
-        mplace=findViewById(R.id.place);
-        mdescriptionofitem=findViewById(R.id.descriptionofitem);
-        mdate=findViewById(R.id.date);
+        setContentView(R.layout.t8_2_activity_upload_lost_item);
+
+        mnameoflostitem=findViewById(R.id.nameoflostitem);
+        mlostplace=findViewById(R.id.lostplace);
+        mdescriptionoflostitem=findViewById(R.id.descriptionoflostitem);
+        mlostdate=findViewById(R.id.lostdate);
 
         //Image
-        maddfoundimgepreview =findViewById(R.id.addfoundimgpreview);
-        muploadfoundimagebut =findViewById(R.id.uploadfoundimagebut);
+        maddlostimgepreview =findViewById(R.id.addfoundimgpreview);
+        mselectlostimagebut =findViewById(R.id.selectlostimagebut);
+
+        fAuth = FirebaseAuth.getInstance();
+
+        mlostsubmitbut=findViewById(R.id.lostsubmitbut);
+        mlostsubmitbut.setOnClickListener(this::onClick);
+
+        mbackbutaddlost = findViewById(R.id.backbutaddlost);
+        mbackbutaddlost.setOnClickListener(this::onClick);
 
         model = new Model();
 
-        fAuth = FirebaseAuth.getInstance();     //for take instance from the our firebase
-
-        mfoundsubmitbut=findViewById(R.id.foundsubmitbut);
-        mfoundsubmitbut.setOnClickListener(this::onClick);
-
-        mbackbutfound = findViewById(R.id.backbutfound);
-        mbackbutfound.setOnClickListener(this::onClick);
-
-        muploadfoundimagebut.setOnClickListener(new View.OnClickListener() {
+        mselectlostimagebut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent galleryIntent = new Intent();
@@ -80,10 +82,9 @@ public class t7_2_upload_found_item extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 2 && resultCode == RESULT_OK && data != null){
             imageUri = data.getData();
-            maddfoundimgepreview.setImageURI(imageUri);
+            maddlostimgepreview.setImageURI(imageUri);
         }
     }
-
     public void uploadimgtoFirebase(Uri uri){
 
         StorageReference fileRef = reference.child(System.currentTimeMillis() + "." + getFileExtension(uri));
@@ -96,33 +97,29 @@ public class t7_2_upload_found_item extends AppCompatActivity {
 //                        Model model = new Model(uri.toString());
                         model.setImageUri(uri.toString());
 
-                        String nameoflostitem = mnameofitem.getText().toString();
-                        String lostplace = mplace.getText().toString();
-                        String descriptionoflostitem = mdescriptionofitem.getText().toString();
-                        String date = mdate.getText().toString();
+                        String nameoflostitem = mnameoflostitem.getText().toString();
+                        String lostplace = mlostplace.getText().toString();
+                        String descriptionoflostitem = mdescriptionoflostitem.getText().toString();
+                        String lostdate = mlostdate.getText().toString();
                         if (TextUtils.isEmpty(nameoflostitem)) {
-                            mnameofitem.setError("Please enter an name of item");
+                            mnameoflostitem.setError("Please enter an name of item");
                             return;
-                        }
-                        if (TextUtils.isEmpty(lostplace)) {
-                            mplace.setError("Please enter place");
+                        }if (TextUtils.isEmpty(lostplace)) {
+                            mlostplace.setError("Please enter place");
                             return;
-                        }
-                        if (TextUtils.isEmpty(descriptionoflostitem)) {
-                            mdescriptionofitem.setError("Please enter description");
-                        }
-                        if (TextUtils.isEmpty(date)) {
-                            mdate.setError("Please enter Date");
-                        }
-
-                        else{
+                        }if (TextUtils.isEmpty(descriptionoflostitem)) {
+                            mdescriptionoflostitem.setError("Please enter description");
+                        }if (TextUtils.isEmpty(lostdate)) {
+                            mlostdate.setError("Please enter Date");
+                            return;
+                        }else{
                             model.setName_of_Item(nameoflostitem);
                             model.setPlace(lostplace);
                             model.setDescription(descriptionoflostitem);
-                            model.setDate(date);
-                            root.push().setValue(model);
+                            model.setDate(lostdate);
 
-                            Toast.makeText(t7_2_upload_found_item.this, "Congratualtions !! Uploaded successfully", Toast.LENGTH_SHORT).show();
+                            root.push().setValue(model);
+                            Toast.makeText(t7_2_Upload_lost_item.this, "Congratualtions !! Uploaded successfully", Toast.LENGTH_SHORT).show();
                             finish();
                         }
                     }
@@ -135,7 +132,7 @@ public class t7_2_upload_found_item extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(t7_2_upload_found_item.this, "Uploading Failed!.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(t7_2_Upload_lost_item.this, "Uploading Failed!.", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -144,22 +141,22 @@ public class t7_2_upload_found_item extends AppCompatActivity {
         MimeTypeMap mime= MimeTypeMap.getSingleton();
         return mime.getExtensionFromMimeType(cr.getType(mUri));
     }
-
-
-    private void uploadfounditemimage(){
+    public void uploadlostitemimage(){
         if(imageUri == null){
-            Toast.makeText(t7_2_upload_found_item.this, "Please select image", Toast.LENGTH_SHORT).show();
+            Toast.makeText(t7_2_Upload_lost_item.this, "Please select image", Toast.LENGTH_SHORT).show();
             return;
-        }else {
+        }
+        else {
             uploadimgtoFirebase(imageUri);
         }
     }
 
     public void onClick(View view) {
-        if (view == mbackbutfound) {
+        if (view == mbackbutaddlost) {
             finish();
-        }else if(view== mfoundsubmitbut){
-            uploadfounditemimage();
+        }
+        else if(view== mlostsubmitbut){
+            uploadlostitemimage();
         }
     }
 }

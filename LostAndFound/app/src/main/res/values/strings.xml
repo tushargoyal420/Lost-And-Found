@@ -70,4 +70,7 @@
     <string name="found_items">Found Items </string>
     <string name="customercare">customercare</string>
     <string name="ratings">ratings</string>
+    <string name="successfully">Successfully</string>
+    <string name="your_item_uploaded">Your item uploaded</string>
+    <string name="itemimage">itemimage</string>
 </resources>

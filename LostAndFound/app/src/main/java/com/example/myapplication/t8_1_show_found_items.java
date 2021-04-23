@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class t7_1_show_found_items extends AppCompatActivity {
+public class t8_1_show_found_items extends AppCompatActivity {
 
     ImageButton mbacktouploadfoundbutton, maddfounditembut;
     private RecyclerView mrecyclerViewfound;
@@ -30,6 +30,8 @@ public class t7_1_show_found_items extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        super.onCreate(savedInstanceState);
+
         setContentView(R.layout.t7_1_show_found_items);
 
         mbacktouploadfoundbutton = findViewById(R.id.backtouploadfound);
@@ -64,7 +66,8 @@ public void onClick(View view) {
         if (view == mbacktouploadfoundbutton) {
             finish();
         }else if (view == maddfounditembut){
-            startActivity(new Intent(this, t7_2_upload_found_item.class));
+            finish();
+            startActivity(new Intent(this, t8_2_upload_found_item.class));
         }
     }
 }

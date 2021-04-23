@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroundhomescreen"
-    tools:context=".t7_1_show_found_items">
+    tools:context=".t8_1_show_found_items">
 
     <ImageButton
         android:id="@+id/addfounditembut"
