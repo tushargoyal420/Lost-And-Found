@@ -21,5 +21,4 @@ public class t9_My_account extends AppCompatActivity {
             finish();
         }
     }
-
 }

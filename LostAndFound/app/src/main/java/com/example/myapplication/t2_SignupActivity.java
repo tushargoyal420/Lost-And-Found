@@ -30,15 +30,14 @@ import java.util.Map;
 
 public class t2_SignupActivity extends AppCompatActivity implements View.OnClickListener {
 
-    public static final String TAG = "TAG";
     FirebaseAuth fAuth;
     EditText mfullname, mEmailAddress, mCreatePassword;
     Button mSignUpButton, mAlreadyHaveAnAccount;
     private Context context = this;
-//    String userID;
-//    FirebaseFirestore fStore;
+
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
     private DatabaseReference root = db.getReference().child("users");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,11 +46,9 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
         mEmailAddress = findViewById(R.id.EmailAddress);
         mCreatePassword = findViewById(R.id.CreatePassword);
         fAuth = FirebaseAuth.getInstance();     //for take instance from the our firebase
-
-//        fStore = FirebaseFirestore.getInstance();
-
         mSignUpButton = findViewById(R.id.SignupButton);
         mAlreadyHaveAnAccount = findViewById(R.id.AlreadyHaveAnAccount);
+
         mSignUpButton.setOnClickListener(this);
         mAlreadyHaveAnAccount.setOnClickListener(this);
     }
@@ -59,7 +56,7 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
     private void registerUser() {
         String email = mEmailAddress.getText().toString().trim();
         String password = mCreatePassword.getText().toString().trim();
-        String name =  mfullname.getText().toString();
+        String name =  mfullname.getText().toString().trim();
         //check is user enter an email id or not
         if (TextUtils.isEmpty(email)) {
             mEmailAddress.setError("Please enter an Email");
@@ -79,6 +76,7 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+
                     FirebaseUser user = fAuth.getCurrentUser();
                     user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
@@ -86,19 +84,13 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
                             if (task.isSuccessful()) {
 
                                 Toast.makeText(context, "successful", Toast.LENGTH_SHORT).show();
-// for realtime database
+                                // for realtime database
                                 HashMap<String, String> userMap= new HashMap<>();
                                 userMap.put("Name", name);
                                 userMap.put("Email", email);
 
                                 root.push().setValue(userMap);
-//for Cloud firebase
-//                                userID = fAuth.getCurrentUser().getUid();
-//                                DocumentReference documentReference = fStore.collection("users").document(userID);
-//                                Map<String,Object> user = new HashMap<>();
-//                                user.put("Name",name);
-//                                user.put("Email",email);
-//                                documentReference.set(user);
+
                             } else {
                                 Toast.makeText(context, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }

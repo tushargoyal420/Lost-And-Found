@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
-
 public class t0_Splash_screen extends AppCompatActivity {
 
     View mpurpleeline, mwhiteline, mredline, mwhiteline2, mgreenline,mpurpleline2;

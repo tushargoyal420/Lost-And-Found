@@ -40,6 +40,5 @@ public class t1_Login_signup_choice extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), t2_SignupActivity.class));
             }
         });
-
     }
 }

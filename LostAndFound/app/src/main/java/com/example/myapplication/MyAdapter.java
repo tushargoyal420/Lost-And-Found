@@ -44,8 +44,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         holder.datee.setText(model.getDate());
         holder.placee.setText(model.getPlace());
 
-        Picasso.get()
-                .load(model.getImageUri()).into(holder.imagev);
+        Picasso.get().load(model.getImageUri()).into(holder.imagev);
+
     }
 
     @Override

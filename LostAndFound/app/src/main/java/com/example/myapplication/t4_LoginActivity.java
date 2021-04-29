@@ -72,7 +72,6 @@ public class t4_LoginActivity extends AppCompatActivity implements View.OnClickL
                     }
                 });
     }
-
     @Override
     public void onClick(View view) {
         if (view == mLogInButton) {

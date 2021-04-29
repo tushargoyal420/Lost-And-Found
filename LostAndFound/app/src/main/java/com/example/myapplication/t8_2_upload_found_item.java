@@ -44,7 +44,7 @@ public class t8_2_upload_found_item extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.t7_2_activity_upload_found_item);
+        setContentView(R.layout.t8_2_activity_upload_found_item);
         mnameofitem=findViewById(R.id.nameofitem);
         mplace=findViewById(R.id.place);
         mdescriptionofitem=findViewById(R.id.descriptionofitem);

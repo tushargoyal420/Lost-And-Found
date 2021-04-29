@@ -32,7 +32,7 @@ public class t7_1_show_lost_item extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.t8_1_activity_show_lost_item);
+        setContentView(R.layout.t7_1_activity_show_lost_item);
 
         mrecyclerView = findViewById(R.id.recyclerviewfound);
 

@@ -32,7 +32,7 @@ public class t8_1_show_found_items extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.t7_1_show_found_items);
+        setContentView(R.layout.t8_1_show_found_items);
 
         mbacktouploadfoundbutton = findViewById(R.id.backtouploadfound);
         mbacktouploadfoundbutton.setOnClickListener(this::onClick);

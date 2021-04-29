@@ -45,7 +45,7 @@ public class t7_2_Upload_lost_item extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.t8_2_activity_upload_lost_item);
+        setContentView(R.layout.t7_2_activity_upload_lost_item);
 
         mnameoflostitem=findViewById(R.id.nameoflostitem);
         mlostplace=findViewById(R.id.lostplace);
@@ -77,6 +77,7 @@ public class t7_2_Upload_lost_item extends AppCompatActivity {
         });
     }
 
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -92,9 +93,9 @@ public class t7_2_Upload_lost_item extends AppCompatActivity {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+
                     @Override
                     public void onSuccess(Uri uri) {
-//                        Model model = new Model(uri.toString());
                         model.setImageUri(uri.toString());
 
                         String nameoflostitem = mnameoflostitem.getText().toString();
