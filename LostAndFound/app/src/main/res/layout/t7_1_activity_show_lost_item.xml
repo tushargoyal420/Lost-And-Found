@@ -5,8 +5,9 @@
     android:id="@+id/backconstraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".t7_1_show_lost_item"
-    android:background="@drawable/backgroundhomescreen">
+    tools:context=".t7lost.t7_1_show_lost_item"
+    android:background="@drawable/backgroundhomescreen"
+    >
 
     <ImageView
         android:id="@+id/lostitemheadtext"

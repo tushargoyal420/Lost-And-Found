@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundhomescreen"
+    tools:context=".sendmessage">
+
+    <ImageButton
+        android:id="@+id/backbutmessage"
+        android:layout_width="40dp"
+        android:layout_height="34dp"
+        android:background="#FFFFFF"
+        android:contentDescription="@string/backbutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.010"
+        app:srcCompat="@drawable/backbut" />
+
+    <TextView
+        android:id="@+id/usernamesender"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="right"
+        android:padding="4dp"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="@string/textview"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/backbutmessage"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlHardcoded,RtlSymmetry" />
+
+    <RelativeLayout
+        android:id="@+id/backlinearlayout1mes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernamesender"
+        app:layout_constraintVertical_bias="1.0">
+
+        <!--        <ListView-->
+        <!--            android:id="@+id/messagelistview"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:scrollbars="vertical" />-->
+        <!--        <TextView-->
+        <!--            android:id="@+id/messages"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="697dp"-->
+        <!--            android:layout_above="@+id/verticallayoutsendmes"-->
+        <!--            android:layout_marginBottom="21dp"-->
+        <!--            android:text="TextView" />-->
+        <!--        <androidx.recyclerview.widget.RecyclerView-->
+        <!--            android:id="@+id/recyclerviewmessages"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"-->
+        <!--            app:layout_goneMarginBottom="50dp"-->
+        <!--            android:layout_marginBottom="80dp"/>-->
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/verticallayoutsendmes"
+            android:layout_alignParentTop="true"
+            />
+        <!--            android:layout_marginBottom="718dp"-->
+
+        <LinearLayout
+            android:id="@+id/verticallayoutsendmes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/typemessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="8"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:hint="@string/type_a_message"
+                android:inputType="textPersonName"
+                android:paddingStart="20dp"
+                android:paddingLeft="20dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="20dp"
+                android:textColor="#000000"
+                android:textColorHint="#353535"
+                tools:ignore="LabelFor" />
+
+            <Button
+                android:id="@+id/messagesendbut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:paddingStart="20dp"
+                android:paddingLeft="20dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="20dp"
+                android:text="@string/send"
+                android:textSize="14sp"
+                app:backgroundTint="#3D5AFE" />
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

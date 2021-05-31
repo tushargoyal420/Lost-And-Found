@@ -73,4 +73,18 @@
     <string name="successfully">Successfully</string>
     <string name="your_item_uploaded">Your item uploaded</string>
     <string name="itemimage">itemimage</string>
+    <string name="type_a_message">Type a message</string>
+    <string name="textview">TextView</string>
+    <string name="send">Send</string>
+    <string name="username">Username</string>
+    <string name="enter_username">Enter username</string>
+    <string name="contact_number">Contact number</string>
+    <string name="place">Place</string>
+    <string name="message">Message</string>
+    <string name="date">Date</string>
+    <string name="descroiption">descroiption</string>
+    <string name="itemname">Itemname</string>
+    <string name="send_message">Send Message</string>
+    <string name="item_details">Item Details</string>
+    <string name="user">user</string>
 </resources>

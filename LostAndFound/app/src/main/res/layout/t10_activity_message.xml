@@ -8,17 +8,29 @@
     android:background="@drawable/backgroundhomescreen"
     >
 
-    <ImageButton
-        android:id="@+id/backbutmessage"
-        android:layout_width="40dp"
-        android:layout_height="34dp"
-        android:background="#FFFFFF"
-        android:contentDescription="@string/backbutton"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewmessageslist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.018"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.010"
-        app:srcCompat="@drawable/backbut" />
+        app:layout_goneMarginBottom="50dp" />
+
+    <Button
+        android:id="@+id/sendmessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerviewmessageslist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.984"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

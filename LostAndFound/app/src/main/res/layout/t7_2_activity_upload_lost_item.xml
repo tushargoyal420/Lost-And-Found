@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".t7_2_Upload_lost_item"
+    tools:context=".t7lost.t7_2_Upload_lost_item"
     android:background="@drawable/backgroundhomescreen"
     >
 
@@ -135,6 +135,21 @@
             android:ems="10"
             android:hint="@string/other"
             android:inputType="textPersonName"
+            android:padding="15dp"
+            android:shadowColor="#000000"
+            android:textColor="@color/themecolor"
+            android:textColorHint="#A4455D5C" />
+
+        <EditText
+            android:id="@+id/phn"
+            android:layout_width="375dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:autofillHints=""
+            android:background="@drawable/backgrountedittext"
+            android:ems="10"
+            android:hint="@string/contact_number"
+            android:inputType="number"
             android:padding="15dp"
             android:shadowColor="#000000"
             android:textColor="@color/themecolor"

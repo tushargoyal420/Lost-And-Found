@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.myapplication.t5loginsignup.t1_Login_signup_choice;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class t11_settings extends AppCompatActivity {

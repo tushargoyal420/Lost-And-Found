@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.example.myapplication.t6found.t8_1_show_found_items;
+import com.example.myapplication.t7lost.t7_1_show_lost_item;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class t6_Dashboard_Activity extends AppCompatActivity implements View.OnClickListener {

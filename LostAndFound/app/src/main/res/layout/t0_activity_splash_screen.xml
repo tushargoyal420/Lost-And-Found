@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FF455D5C"
-    tools:context=".t0_Splash_screen">
+    tools:context=".t5loginsignup.t0_Splash_screen">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

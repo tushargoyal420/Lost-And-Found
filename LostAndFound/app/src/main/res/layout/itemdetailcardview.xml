@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/backtouploadfound">
+
+            <ImageView
+                android:id="@+id/itemimage2"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                />
+
+            <TextView
+                android:id="@+id/itemname2"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:padding="5dp"
+                android:paddingStart="20dp"
+                android:paddingLeft="20dp"
+                android:text="@string/name_of_item"
+                android:textColor="@color/themecolor"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/itemdes2"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:padding="5dp"
+                android:paddingStart="20dp"
+                android:paddingLeft="20dp"
+                android:text="@string/description_of_item"
+                android:textColor="@color/themecolor"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/itemdate2"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:padding="5dp"
+                android:paddingStart="20dp"
+                android:paddingLeft="20dp"
+                android:text="@string/date"
+                android:textColor="@color/themecolor"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/itemplace2"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:padding="5dp"
+                android:paddingStart="20dp"
+                android:paddingLeft="20dp"
+                android:text="@string/place"
+                android:textColor="@color/themecolor"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/user2"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:padding="5dp"
+                android:paddingStart="20dp"
+                android:paddingLeft="20dp"
+                android:text="@string/user"
+                android:textColor="@color/themecolor"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/sendmessage2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="15dp"
+                android:paddingStart="20dp"
+                android:paddingLeft="20dp"
+                android:text="@string/send_message"
+                android:textColor="@color/themecolor"
+                android:textSize="25sp"
+                app:backgroundTint="#FFFFFF" />
+
+        </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
