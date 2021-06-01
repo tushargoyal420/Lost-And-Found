@@ -107,7 +107,7 @@ public class t8_1_show_found_items extends AppCompatActivity {
                 holder.itemname.setText(model.getName_of_Item());
                 holder.itemplace.setText(model.getPlace());
                 holder.itemdate.setText(model.getDate());
-                holder.itemdes.setText(model.getDescription());
+//                holder.itemdes.setText(model.getDescription());
                 Picasso.get().load(model.getImageUri()).into(holder.itemimage);
 
                 holder.card.setOnClickListener(new View.OnClickListener() {
@@ -118,9 +118,7 @@ public class t8_1_show_found_items extends AppCompatActivity {
                             startActivity(intent);
                         }
                 });
-
             }
-
             @NonNull
             @Override
             public MyViewHolder2 onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

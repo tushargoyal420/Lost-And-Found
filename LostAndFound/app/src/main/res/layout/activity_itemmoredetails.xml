@@ -7,36 +7,55 @@
     tools:context=".itemmoredetails"
     android:background="@drawable/backgroundhomescreen">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="7dp"
-        android:text="@string/item_details"
-        android:textColor="@color/themecolor"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toEndOf="@+id/backtoitemlist"
-        app:layout_constraintTop_toTopOf="parent" />
-<!--        app:layout_constraintBottom_toTopOf="@+id/linearLayout"-->
-
-    <ImageButton
-        android:id="@+id/backtoitemlist"
-        android:layout_width="39dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="11dp"
-        android:background="#FFFFFF"
-        android:contentDescription="@string/backbutton"
-        app:layout_constraintEnd_toStartOf="@+id/ilostsomethingheadtext"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:foregroundGravity="center_vertical"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/backbut" />
+        app:layout_constraintTop_toTopOf="parent">
 
+        <ImageButton
+            android:id="@+id/backtoitemlist"
+            android:layout_width="39dp"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:contentDescription="@string/backbutton"
+            app:layout_constraintEnd_toStartOf="@+id/ilostsomethingheadtext"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/backbut" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/item_details"
+            android:textColor="@color/themecolor"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.476"
+            app:layout_constraintStart_toEndOf="@+id/backtoitemlist"
+            app:layout_constraintTop_toTopOf="parent" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/usernameonscreen"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:gravity="end"-->
+<!--            android:paddingRight="10dp"-->
+<!--            android:text="TextView"-->
+<!--            android:textAlignment="textEnd"-->
+<!--            android:textColor="#000000"-->
+<!--            android:textSize="22sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/textView2"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -51,7 +70,7 @@
         <ImageView
             android:id="@+id/itemimage"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="300dp"
             />
 
         <TextView
@@ -105,19 +124,33 @@
             android:text="@string/place"
             android:textColor="@color/themecolor"
             android:textSize="20sp" />
+<!--        <TextView-->
+<!--            android:id="@+id/user"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:padding="5dp"-->
+<!--            android:paddingStart="20dp"-->
+<!--            android:paddingLeft="20dp"-->
+<!--            android:text="@string/user"-->
+<!--            android:textColor="@color/themecolor"-->
+<!--            android:textSize="20sp" />-->
+
         <TextView
-            android:id="@+id/user"
-            android:layout_width="300dp"
+            android:id="@+id/sameuser"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@color/white"
-            android:padding="5dp"
+            android:background="@color/purple_500"
+            android:padding="15dp"
+            android:gravity="center"
             android:paddingStart="20dp"
             android:paddingLeft="20dp"
-            android:text="@string/user"
-            android:textColor="@color/themecolor"
-            android:textSize="20sp" />
-
+            android:text="@string/you_uploaded_this_item"
+            android:textColor="@color/white"
+            android:visibility="visible"
+            android:textSize="25sp" />
         <Button
             android:id="@+id/sendmessage222"
             android:layout_width="match_parent"
@@ -129,10 +162,10 @@
             android:text="@string/send_message"
             android:textColor="@color/themecolor"
             android:textSize="25sp"
+            android:visibility="invisible"
             app:backgroundTint="#FFFFFF" />
 
     </LinearLayout>
-
 <!--    <androidx.recyclerview.widget.RecyclerView-->
 <!--        android:id="@+id/recyclerviewitem"-->
 <!--        android:layout_width="match_parent"-->
@@ -140,18 +173,5 @@
 <!--        android:layout_marginTop="110dp"-->
 <!--        tools:layout_editor_absoluteX="8dp"-->
 <!--            />-->
-
-    <TextView
-        android:id="@+id/textViewid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -61,7 +61,7 @@ public class t7_2_Upload_lost_item extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         mlostsubmitbut=findViewById(R.id.lostsubmitbut);
         mlostsubmitbut.setOnClickListener(this::onClick);
-        mbackbutaddlost = findViewById(R.id.backbutaddlost);
+        mbackbutaddlost = findViewById(R.id.backtodash);
         mbackbutaddlost.setOnClickListener(this::onClick);
         mselectlostimagebut.setOnClickListener(new View.OnClickListener() {
             @Override

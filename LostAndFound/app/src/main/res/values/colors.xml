@@ -9,5 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="themecolor">#455D5C</color>
     <color name="transparent">#00455D5C</color>
+    <color name="chatleft">#393939</color>
+
 
 </resources>

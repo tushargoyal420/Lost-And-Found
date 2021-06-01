@@ -23,7 +23,7 @@
         app:srcCompat="@drawable/ilostsomethingheadtext" />
 
     <ImageButton
-        android:id="@+id/backbutaddlost"
+        android:id="@+id/backtodash"
         android:layout_width="39dp"
         android:layout_height="31dp"
         android:layout_marginStart="8dp"

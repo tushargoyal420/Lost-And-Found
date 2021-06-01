@@ -87,4 +87,10 @@
     <string name="send_message">Send Message</string>
     <string name="item_details">Item Details</string>
     <string name="user">user</string>
+    <string name="you_uploaded_this_item">You uploaded this Item</string>
+    <string name="search_user">Search user...</string>
+    <string name="useimage">useimage</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello">hello</string>
 </resources>

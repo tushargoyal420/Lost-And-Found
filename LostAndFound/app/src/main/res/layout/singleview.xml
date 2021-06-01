@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="180dp"
+    android:layout_height="150dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginTop="10dp"
     android:padding="10dp"
@@ -14,7 +14,7 @@
     <LinearLayout
         android:id="@+id/mainlineaarlayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:orientation="horizontal"
         tools:ignore="MissingConstraints">
 
@@ -36,40 +36,36 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+<!--                android:layout_weight="1"-->
             <TextView
                 android:id="@+id/nameofitem"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:padding="5dp"
                 android:text="@string/name_of_item"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
+<!--                android:layout_weight="1"-->
             <TextView
                 android:id="@+id/dateofitem"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:padding="5dp"
                 android:text="@string/date"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
+<!--                android:layout_weight="1"-->
             <TextView
                 android:id="@+id/placeofitem"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:padding="5dp"
                 android:text="@string/place"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
-            <TextView
-                android:id="@+id/desofitem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="@string/descroiption"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+
 
         </LinearLayout>
     </LinearLayout>

@@ -1,16 +1,16 @@
-package com.example.myapplication.chats.chat_models;
+package com.example.myapplication.t2models;
 
 public class User {
 
     private String id;
-    private String username;
+    private String Name;
     private String imageURL;
     private String status;
     private String search;
 
-    public User(String id, String username, String imageURL, String status, String search) {
+    public User(String id, String name, String imageURL, String status, String search) {
         this.id = id;
-        this.username = username;
+        this.Name = name;
         this.imageURL = imageURL;
         this.status = status;
         this.search = search;
@@ -28,12 +28,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return Name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.Name = name;
     }
 
     public String getImageURL() {

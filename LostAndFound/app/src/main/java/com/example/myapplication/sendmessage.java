@@ -45,6 +45,9 @@ public class sendmessage extends AppCompatActivity {
     private DatabaseReference root=db.getReference().child("usermessages");
     private DatabaseReference root2;
     private DatabaseReference root3;
+    private DatabaseReference retroot;
+    private DatabaseReference retroot2;
+
     @TargetApi(Build.VERSION_CODES.O)
     private int number;
     private static final AtomicInteger count = new AtomicInteger(0);
@@ -57,8 +60,7 @@ public class sendmessage extends AppCompatActivity {
     private RecyclerView mrecyclerviewmessages;
     private MyAdapterShowMessages adapterShowMessages;
     private ArrayList<ModelMessages> list3;
-    private DatabaseReference retroot;
-    private DatabaseReference retroot2;
+
 
     ListView mlistview;
 
@@ -76,7 +78,7 @@ public class sendmessage extends AppCompatActivity {
 
         User = fAuth.getCurrentUser().getUid();   //current user
         String User22 = getIntent().getStringExtra("User22");   //second user
-        verify(User,User22);
+        getdata(User,User22);
 
         mmessagesendbut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +93,7 @@ public class sendmessage extends AppCompatActivity {
             }
         });
     }
-    public void verify(String User, String User22){
+    public void getdata(String User, String User22){
         retroot= root.child(String.valueOf(User));
         retroot2= retroot.child(User22);
 
@@ -127,14 +129,20 @@ public class sendmessage extends AppCompatActivity {
             String currentDateandTime = sdf.format(new Date());
 
             root2=  root.child(String.valueOf(User));
+//            model.setUser(user);
+//            model.setPhone(phn);
+//            root.push().setValue(model);
+//            modelSendMessage.setSend(typemessage);
+            root3= root2.child(User22);
+            root3.child(currentDateandTime).setValue(typemessage);
+            mtypemessage.getText().clear();
 
-            if(User.equals(User22)){
-                root3=  root2.child(User22);
-              root3.child(currentDateandTime).setValue(typemessage);
-                mtypemessage.getText().clear();
-            }else{
-                root2.push().setValue(modelSendMessage);
-            }
+//            if(User.equals(User22)){
+//                root3=  root2.child(User22);
+//              root3.child(currentDateandTime).setValue(typemessage);
+//            }
+//            else{
+//            }
         }
     }
 }

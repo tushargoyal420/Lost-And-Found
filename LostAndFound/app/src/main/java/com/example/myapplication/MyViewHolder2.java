@@ -18,7 +18,7 @@ public class MyViewHolder2 extends RecyclerView.ViewHolder {
         itemimage = itemView.findViewById(R.id.imageofitem);
         itemname = itemView.findViewById(R.id.nameofitem);
         itemplace = itemView.findViewById(R.id.placeofitem);
-        itemdes = itemView.findViewById(R.id.desofitem);
+//        itemdes = itemView.findViewById(R.id.desofitem);
         itemdate = itemView.findViewById(R.id.dateofitem);
         card = itemView.findViewById(R.id.card);
     }

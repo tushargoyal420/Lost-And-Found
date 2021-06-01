@@ -33,7 +33,7 @@
                 android:id="@+id/signupcarddetailslinear"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 android:paddingTop="40dp">
@@ -58,24 +58,24 @@
                     android:textColorHint="#858080"
                     android:textColorLink="#00BCD4"
                     android:textSize="15sp" />
-                <EditText
-                    android:id="@+id/username"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:autofillHints=""
-                    android:background="@drawable/enterdetails"
-                    android:ems="10"
-                    android:hint="@string/enter_username"
-                    android:inputType="text"
-                    android:paddingStart="30dp"
-                    android:paddingLeft="30dp"
-                    android:paddingEnd="40dp"
-                    android:paddingRight="40dp"
-                    android:paddingBottom="7dp"
-                    android:textColor="#000000"
-                    android:textColorHighlight="#00BCD4"
-                    android:textColorHint="#FF858080"
-                    android:textSize="15sp" />
+<!--                <EditText-->
+<!--                    android:id="@+id/username"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:autofillHints=""-->
+<!--                    android:background="@drawable/enterdetails"-->
+<!--                    android:ems="10"-->
+<!--                    android:hint="@string/enter_username"-->
+<!--                    android:inputType="text"-->
+<!--                    android:paddingStart="30dp"-->
+<!--                    android:paddingLeft="30dp"-->
+<!--                    android:paddingEnd="40dp"-->
+<!--                    android:paddingRight="40dp"-->
+<!--                    android:paddingBottom="7dp"-->
+<!--                    android:textColor="#000000"-->
+<!--                    android:textColorHighlight="#00BCD4"-->
+<!--                    android:textColorHint="#FF858080"-->
+<!--                    android:textSize="15sp" />-->
 
                 <EditText
                     android:id="@+id/EmailAddress"
@@ -144,7 +144,7 @@
                 android:layout_weight="1">
 
                 <Button
-                    android:id="@+id/SignupButton"
+                    android:id="@+id/sSignupButton"
                     android:layout_width="239dp"
                     android:layout_height="58dp"
                     android:text="@string/signup"

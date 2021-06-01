@@ -37,7 +37,7 @@ import com.squareup.picasso.Picasso;
 
 public class itemmoredetails extends AppCompatActivity {
     ImageView mitemimage;
-    TextView mitemname, mitemdes, mitemdate, mitemplace, muser,mtextViewid;
+    TextView mitemname, mitemdes, mitemdate, mitemplace, muser,musernameonscreen, msameuser;
     ImageButton mbacktoitemlist;
     Button msendmessage;
     DatabaseReference ref, DataRef;
@@ -57,8 +57,9 @@ public class itemmoredetails extends AppCompatActivity {
         mitemdes = findViewById(R.id.itemdes);
         mitemdate = findViewById(R.id.itemdate);
         mitemplace = findViewById(R.id.itemplace);
-        muser = findViewById(R.id.user);
-        mtextViewid = findViewById(R.id.textViewid);
+//        muser = findViewById(R.id.user);
+        msameuser = findViewById(R.id.sameuser);
+//        musernameonscreen = findViewById(R.id.usernameonscreen);
         msendmessage = findViewById(R.id.sendmessage222);
         fAuth = FirebaseAuth.getInstance();
         User = fAuth.getCurrentUser().getUid();   //current user
@@ -79,7 +80,6 @@ public class itemmoredetails extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-
 //                    String itemName = dataSnapshot.child("name_of_Item").getValue().toString();
 //                    String itemDate = dataSnapshot.child("date").getValue().toString();
 //                    String itemDes = dataSnapshot.child("description").getValue().toString();
@@ -94,16 +94,22 @@ public class itemmoredetails extends AppCompatActivity {
                     Picasso.get().load(model.getImageUri()).into(mitemimage);
                     String userdata= model.getUser();
 //                    muser.setText(userdata);
-                    if(userdata==User){
-                        msendmessage.setError("You can not send a message to yourself");
+//                    musernameonscreen.setText(model.getUser());
+
+                    if(String.valueOf(userdata).equals(String.valueOf(User))){
+                        msendmessage.setVisibility(View.INVISIBLE);
+                        msameuser.setVisibility(View.VISIBLE);
                     }else{
+                        msendmessage.setVisibility(View.VISIBLE);
+                        msameuser.setVisibility(View.INVISIBLE);
+
                         msendmessage.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent intent = new Intent(itemmoredetails.this, sendmessage.class);
-                                intent.putExtra("User22",userdata);
+                                Intent intent = new Intent(itemmoredetails.this, messageAct.class);
+//                                String userdata2= "Y1SJTq8uYETM9E8d0kxEfhj9FQ63";
+                                intent.putExtra("userid", model.getUser());
                                 startActivity(intent);
-    //                            startActivity(new Intent(itemmoredetails.this , sendmessage.class));
                             }
                         });
                     }
@@ -113,22 +119,10 @@ public class itemmoredetails extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {}
         });
     }
-}
 
-//    public void sendmessages(View view) {
-//        Intent intent = new Intent(itemmoredetails.this, sendmessage.class);
-//                            intent.putExtra("User", muser2);
-//                            startActivity(intent);
-//                    }}
-//    @Override
-//    public void onClick(View view) {
-//        if (view == msendmessage) {
-////            String muser2 = DataSnapshot datasnapshot;
-//            Intent intent = new Intent(itemmoredetails.this, sendmessage.class);
-//            intent.putExtra("User", muser2);
-//            startActivity(intent);
-//                }
-//            }
+
+
+}
 
 //        private void LoadData(String ItemKey) {
 //            Query query=DataRef.equalTo(ItemKey );
@@ -205,16 +199,6 @@ public class itemmoredetails extends AppCompatActivity {
 //    }
 //}
 //    }
-
-//  msendmessage.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//                            Intent intent=new Intent(itemmoredetails.this,sendmessage.class);
-//                            intent.putExtra("User", muser);
-//                            startActivity(intent); }
-//                    });
-
-
 
 
 

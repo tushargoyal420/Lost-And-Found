@@ -1,7 +1,10 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +19,7 @@ public class t6_Dashboard_Activity extends AppCompatActivity implements View.OnC
     ImageButton mlogoutbut, mmessagesbut, mmyaccountbut, msettingbut;
     Button milostsomethingbut2, mifoundsomethingbut2;
     FirebaseAuth fAuth;
+    private Fragment MessageFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,14 @@ public class t6_Dashboard_Activity extends AppCompatActivity implements View.OnC
         msettingbut = findViewById(R.id.settingbut);
         msettingbut.setOnClickListener(this);
     }
+
+//    public void replaceFragment(Fragment someFragment) {
+//        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+//        transaction.replace(R.id.MessageFragement, someFragment);
+//        transaction.addToBackStack(null);
+//        transaction.commit();
+//    }
+
     @Override
     public void onClick(View view) {
         if (view == milostsomethingbut2) {
@@ -50,9 +62,12 @@ public class t6_Dashboard_Activity extends AppCompatActivity implements View.OnC
         }
         else if (view == mmessagesbut) {
             startActivity(new Intent(this, t10_Message.class));
+//            getSupportFragmentManager().beginTransaction().replace(R.id.messagefreg, new MessageFragment()).commit();
+
         }
         else if (view == msettingbut) {
             startActivity(new Intent(this, t11_settings.class));
+
         }
     }
 }
