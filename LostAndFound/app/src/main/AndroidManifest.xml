@@ -13,66 +13,44 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".t10_2_MessageList"></activity>
-        <activity android:name=".messageAct" />
-        <activity android:name=".itemmoredetails" />
-        <activity android:name=".sendmessage" />
-        <activity android:name=".t7lost.t7_1_show_lost_item" />
-        <activity android:name=".t7lost.t7_2_Upload_lost_item" />
-        <activity android:name=".t11_settings" />
-        <activity android:name=".t10_Message" />
-        <activity android:name=".t9_My_account" />
-        <activity android:name=".t6found.t8_1_show_found_items" />
-        <activity android:name=".t6found.t8_2_upload_found_item" />
-        <activity android:name=".t6_Dashboard_Activity" />
-        <activity android:name=".t5loginsignup.t5_Reset_password" />
-        <activity android:name=".t5loginsignup.t3_Signup_congratulation" />
-        <activity android:name=".t5loginsignup.t4_LoginActivity" />
-        <activity android:name=".t5loginsignup.t2_SignupActivity" />
-        <activity android:name=".t5loginsignup.t1_Login_signup_choice" />
-        <activity android:name=".t5loginsignup.t0_Splash_screen">
+        <activity android:name=".Activity.t9_ParticularItemsDetails"></activity>
+        <activity android:name=".Activity.t11_2_Messagelist_recentusers" />
+        <activity android:name=".Activity.t10_SendMessageToUser" />
+        <activity android:name=".Activity.t7_1_show_lost_item" />
+        <activity android:name=".Activity.t7_2_Upload_lost_item" />
+        <activity android:name=".Activity.t13_settings" />
+        <activity android:name=".Activity.t11_1_Messagelist_allusers" />
+        <activity android:name=".Activity.t12_My_account" />
+        <activity android:name=".Activity.t8_1_show_found_items" />
+        <activity android:name=".Activity.t8_2_upload_found_item" />
+        <activity android:name=".Activity.t6_Dashboard_Activity" />
+        <activity android:name=".Activity.t5_Reset_password" />
+        <activity android:name=".Activity.t3_Signup_congratulation" />
+        <activity android:name=".Activity.t4_LoginActivity" />
+        <activity android:name=".Activity.t2_SignupActivity" />
+        <activity android:name=".Activity.t1_Login_signup_choice" />
+        <activity android:name=".Activity.t0_Splash_screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-
-
-<!--            android:enabled="true"-->
-        <service android:name=".Notifications.MyFirebaseIdService"
+        </activity> <!-- android:enabled="true" -->
+        <service
+            android:name=".Notifications.MyFirebaseIdService"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-
-        <service android:name=".Notifications.MyFirebaseMessaging"
+        <service
+            android:name=".Notifications.MyFirebaseMessaging"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
-
-        <!--        <activity android:name=".chats.MainActivity" />-->
-<!--        <activity android:name=".chats.MessageActivity" /> &lt;!&ndash; <service android:name=".chats.chat_notifications.MyFirebaseIdService" &ndash;&gt;-->
-        <!-- android:enabled="true" -->
-        <!-- android:exported="true"> -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/> -->
-        <!-- </intent-filter> -->
-        <!-- </service> -->
-<!--        <service-->
-<!--            android:name=".chats.chat_notifications.MyFirebaseMessaging"-->
-<!--            android:enabled="true"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="com.google.firebase.MESSAGING_EVENT" />-->
-<!--            </intent-filter>-->
-<!--        </service>-->
     </application>
 
 </manifest>

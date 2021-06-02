@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/themecolor"
-    tools:context=".t6found.t8_1_show_found_items">
+    tools:context=".Activity.t8_1_show_found_items">
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:paddingTop="5dp"

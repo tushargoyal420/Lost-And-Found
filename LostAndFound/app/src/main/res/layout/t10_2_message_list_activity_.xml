@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".t10_2_MessageList"
+    tools:context=".Activity.t11_2_Messagelist_recentusers"
     android:background="@color/themecolor">
 
     <LinearLayout

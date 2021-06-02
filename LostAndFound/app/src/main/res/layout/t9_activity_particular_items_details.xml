@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.t9_ParticularItemsDetails"
+    android:background="@color/themecolor"
+    >
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/backtofounditemlist"
+            android:layout_width="39dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:background="#FFFFFF"
+            android:contentDescription="@string/backbutton"
+            app:srcCompat="@drawable/backbut" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/item_details"
+            android:textColor="@color/themecolor"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.476"
+            app:layout_constraintStart_toEndOf="@+id/backtoitemlist"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/usernameonscreen"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:gravity="end"-->
+    <!--            android:paddingRight="10dp"-->
+    <!--            android:text="TextView"-->
+    <!--            android:textAlignment="textEnd"-->
+    <!--            android:textColor="#000000"-->
+    <!--            android:textSize="22sp"-->
+    <!--            android:textStyle="bold"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toEndOf="@+id/textView2"-->
+    <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backtouploadfound">
+
+        <ImageView
+            android:id="@+id/itemimage"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            />
+
+        <TextView
+            android:id="@+id/itemname"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:text="@string/name_of_item"
+            android:textColor="@color/themecolor"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/itemdes"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:text="@string/description_of_item"
+            android:textColor="@color/themecolor"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/itemdate"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:text="@string/date"
+            android:textColor="@color/themecolor"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/itemplace"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:text="@string/place"
+            android:textColor="@color/themecolor"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/sameuser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/purple_500"
+            android:padding="15dp"
+            android:gravity="center"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:text="@string/you_uploaded_this_item"
+            android:textColor="@color/white"
+            android:visibility="visible"
+            android:textSize="25sp" />
+        <Button
+            android:id="@+id/sendmessage222"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="15dp"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:text="@string/send_message"
+            android:textColor="@color/themecolor"
+            android:textSize="25sp"
+            android:visibility="invisible"
+            app:backgroundTint="#FFFFFF" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
