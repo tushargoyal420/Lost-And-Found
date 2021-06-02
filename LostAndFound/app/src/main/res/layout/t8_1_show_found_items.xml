@@ -5,57 +5,65 @@
     android:id="@+id/backconstraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundhomescreen"
+    android:background="@color/themecolor"
     tools:context=".t6found.t8_1_show_found_items">
-
-    <ImageButton
-        android:id="@+id/addfounditembut"
-        android:layout_width="61dp"
-        android:layout_height="39dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="6dp"
-        android:background="#FFFFFF"
-        android:src="@drawable/addfounditem"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:foregroundGravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerviewmessageslist"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
 
     <ImageButton
-        android:id="@+id/backtouploadfound"
+        android:gravity="center"
+        android:id="@+id/backtodashfromfound"
         android:layout_width="39dp"
         android:layout_height="31dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="11dp"
         android:background="#FFFFFF"
         android:contentDescription="@string/backbutton"
         app:layout_constraintEnd_toStartOf="@+id/ilostsomethingheadtext"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_weight="0.1"
         app:srcCompat="@drawable/backbut" />
 
-    <EditText
-        android:id="@+id/inputSearch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/input_search"
-        android:backgroundTint="@color/white"
-        android:drawableRight="@drawable/ic_search"
-        android:hint="Search data here ..."
-        android:paddingLeft="20dp"
-        android:paddingTop="8dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="8dp"
-        android:textColor="#000000"
-        android:textColorHint="#000000"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        tools:layout_editor_absoluteX="16dp" />
+        <TextView
+            android:gravity="center"
+            android:textAlignment="textStart"
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toStartOf="@+id/addfounditembut"
+            app:layout_constraintStart_toEndOf="@+id/backtouploadfound"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/found_items"
+            android:textStyle="bold"
+            android:textColor="@color/themecolor"
+            android:layout_weight="4"
+            android:textSize="22sp"
+            tools:ignore="RtlCompat" />
 
+        <ImageButton
+            android:id="@+id/addfounditembut"
+            android:layout_width="61dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:foregroundGravity="right"
+            android:gravity="center"
+            android:src="@drawable/addfounditem"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
 
     <!--    <androidx.recyclerview.widget.RecyclerView-->
     <!--    <ListView-->
@@ -65,26 +73,39 @@
 <!--        tools:layout_editor_absoluteX="97dp"-->
 <!--        tools:layout_editor_absoluteY="477dp" />-->
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        tools:layout_editor_absoluteX="0dp"
+        android:id="@+id/searchlinearlayout">
+
+        <EditText
+            android:id="@+id/inputSearchfounditem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/input_search"
+            android:backgroundTint="@color/white"
+            android:drawableRight="@drawable/ic_search"
+            android:hint="Search data here ..."
+            android:paddingLeft="20dp"
+            android:paddingTop="8dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="8dp"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            tools:layout_editor_absoluteX="16dp" />
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewfound"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="110dp"
-        app:layout_constraintTop_toBottomOf="@+id/inputSearch"
+        android:layout_marginTop="120dp"
+        app:layout_constraintTop_toBottomOf="@+id/searchlinearlayout"
         tools:layout_editor_absoluteX="8dp" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="11dp"
-        app:layout_constraintEnd_toStartOf="@+id/addfounditembut"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/backtouploadfound"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/founditemsheadtext" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

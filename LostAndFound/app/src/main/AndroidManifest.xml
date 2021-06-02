@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".messageAct"></activity>
+        <activity android:name=".t10_2_MessageList"></activity>
+        <activity android:name=".messageAct" />
         <activity android:name=".itemmoredetails" />
         <activity android:name=".sendmessage" />
         <activity android:name=".t7lost.t7_1_show_lost_item" />

@@ -61,7 +61,8 @@ public class t6_Dashboard_Activity extends AppCompatActivity implements View.OnC
             startActivity(new Intent(this, t9_My_account.class));
         }
         else if (view == mmessagesbut) {
-            startActivity(new Intent(this, t10_Message.class));
+//            startActivity(new Intent(this, t10_Message.class));
+            startActivity(new Intent(this, t10_2_MessageList.class));
 //            getSupportFragmentManager().beginTransaction().replace(R.id.messagefreg, new MessageFragment()).commit();
 
         }

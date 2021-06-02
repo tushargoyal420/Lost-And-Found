@@ -38,7 +38,7 @@ import com.squareup.picasso.Picasso;
 public class itemmoredetails extends AppCompatActivity {
     ImageView mitemimage;
     TextView mitemname, mitemdes, mitemdate, mitemplace, muser,musernameonscreen, msameuser;
-    ImageButton mbacktoitemlist;
+    ImageButton mbacktofounditemlist;
     Button msendmessage;
     DatabaseReference ref, DataRef;
     FirebaseAuth fAuth;
@@ -51,7 +51,6 @@ public class itemmoredetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_itemmoredetails);
-        mbacktoitemlist = findViewById(R.id.backtoitemlist);
         mitemimage = findViewById(R.id.itemimage);
         mitemname = findViewById(R.id.itemname);
         mitemdes = findViewById(R.id.itemdes);
@@ -63,7 +62,13 @@ public class itemmoredetails extends AppCompatActivity {
         msendmessage = findViewById(R.id.sendmessage222);
         fAuth = FirebaseAuth.getInstance();
         User = fAuth.getCurrentUser().getUid();   //current user
-
+        mbacktofounditemlist = findViewById(R.id.backtofounditemlist);
+        mbacktofounditemlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 //        mrecyclerviewitem = findViewById(R.id.recyclerviewitem);
 //        mrecyclerviewitem.setLayoutManager(new LinearLayoutManager(this));
 //            LoadData(ItemKey);
@@ -75,7 +80,14 @@ public class itemmoredetails extends AppCompatActivity {
     }
     public void data(){
         String ItemKey = getIntent().getStringExtra("ItemKey");
-        DataRef = FirebaseDatabase.getInstance().getReference().child("founditems").child(ItemKey);
+        String Item = getIntent().getStringExtra("Item");
+        String lost= "lost";
+        String found= "found";
+        if(Item.equals(found)){
+            DataRef = FirebaseDatabase.getInstance().getReference().child("founditems").child(ItemKey);
+        }if (Item.equals(lost)){
+            DataRef = FirebaseDatabase.getInstance().getReference().child("lostitems").child(ItemKey);
+        }
         DataRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

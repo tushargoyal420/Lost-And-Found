@@ -52,7 +52,6 @@ public class t7_2_Upload_lost_item extends AppCompatActivity {
         mlostplace=findViewById(R.id.lostplace);
         mdescriptionoflostitem=findViewById(R.id.descriptionoflostitem);
         mlostdate=findViewById(R.id.lostdate);
-        mphn=findViewById(R.id.phn);
 
         //Image
         maddlostimgepreview =findViewById(R.id.addfoundimgpreview);
@@ -96,7 +95,6 @@ public class t7_2_Upload_lost_item extends AppCompatActivity {
                         String lostplace = mlostplace.getText().toString();
                         String descriptionoflostitem = mdescriptionoflostitem.getText().toString();
                         String lostdate = mlostdate.getText().toString();
-                        String phn = mphn.getText().toString();
 
                         if (TextUtils.isEmpty(nameoflostitem)) {
                             mnameoflostitem.setError("Please enter an name of item");
@@ -106,18 +104,16 @@ public class t7_2_Upload_lost_item extends AppCompatActivity {
                             return;
                         }if (TextUtils.isEmpty(descriptionoflostitem)) {
                             mdescriptionoflostitem.setError("Please enter description");
+                            return;
                         }if (TextUtils.isEmpty(lostdate)) {
                             mlostdate.setError("Please enter Date");
                             return;
-                        }if (TextUtils.isEmpty(phn)) {
-                            mphn.setError("Please enter Contact number");
-                            return;
-                        } else{
+                        }else{
                             model.setName_of_Item(nameoflostitem);
                             model.setPlace(lostplace);
                             model.setDescription(descriptionoflostitem);
                             model.setDate(lostdate);
-//                            model.setPhone(phn);
+                            model.setUser(user);
                             root.push().setValue(model);
 //                            root.child(String.valueOf(user)).setValue(model);
 

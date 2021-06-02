@@ -32,7 +32,7 @@ import com.google.firebase.storage.UploadTask;
 
 public class t8_2_upload_found_item extends AppCompatActivity {
     ImageButton mbackbutfound;
-    EditText mnameofitem, mplace, mdescriptionofitem, mdate, mphn;
+    EditText mnameofitem, mplace, mdescriptionofitem, mdate;
     Button mfoundsubmitbut, muploadfoundimagebut;
     ImageView maddfoundimgepreview;
 
@@ -52,7 +52,7 @@ public class t8_2_upload_found_item extends AppCompatActivity {
         mplace=findViewById(R.id.place);
         mdescriptionofitem=findViewById(R.id.descriptionofitem);
         mdate=findViewById(R.id.date);
-        mphn=findViewById(R.id.phn);
+
 
         //Image
         maddfoundimgepreview =findViewById(R.id.addfoundimgpreview);
@@ -89,14 +89,12 @@ public class t8_2_upload_found_item extends AppCompatActivity {
                 fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
-//                        Model model = new Model(uri.toString());.
                         user = fAuth.getCurrentUser().getUid();
                         model.setImageUri(uri.toString());
                         String nameoflostitem = mnameofitem.getText().toString();
                         String lostplace = mplace.getText().toString();
                         String descriptionoflostitem = mdescriptionofitem.getText().toString();
                         String date = mdate.getText().toString();
-//                        String phn = mphn.getText().toString();
                         if (TextUtils.isEmpty(nameoflostitem)) {
                             mnameofitem.setError("Please enter an name of item");
                             return;
@@ -107,24 +105,19 @@ public class t8_2_upload_found_item extends AppCompatActivity {
                         }
                         if (TextUtils.isEmpty(descriptionoflostitem)) {
                             mdescriptionofitem.setError("Please enter description");
+                            return;
                         }
                         if (TextUtils.isEmpty(date)) {
                             mdate.setError("Please enter Date");
                             return;
                         }
-//                        if (TextUtils.isEmpty(phn)) {
-//                            mphn.setError("Please enter Contact number");
-//                        }
                         else{
                             model.setName_of_Item(nameoflostitem);
                             model.setPlace(lostplace);
                             model.setDescription(descriptionoflostitem);
                             model.setDate(date);
                             model.setUser(user);
-//                            model.setPhone(phn);
                             root.push().setValue(model);
-//                            retroot= root.child(String.valueOf(user));
-//                            retroot2= retroot.child(user2);
 
                             Toast.makeText(t8_2_upload_found_item.this, "Congratualtions !! Uploaded successfully", Toast.LENGTH_SHORT).show();
                             finish();

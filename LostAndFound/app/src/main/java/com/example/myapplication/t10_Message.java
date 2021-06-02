@@ -110,17 +110,4 @@ public class t10_Message extends AppCompatActivity{
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
-    }
-
-//    public void onClick(View view) {
-//        if (view == mbacktodash) {
-//            startActivity(new Intent(this,t6_Dashboard_Activity.class));
-//        }
-//    }
-}
-
-
-//    private FirebaseDatabase db= FirebaseDatabase.getInstance();
-//    private DatabaseReference root=db.getReference().child("founditems");
-//    private MyAdapterShowMessagesList adapterShowMessagesList;
-//    private ArrayList<ModelMessagesList> list2;
+    }}

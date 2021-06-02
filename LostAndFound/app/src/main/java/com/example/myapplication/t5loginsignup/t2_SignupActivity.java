@@ -56,7 +56,7 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void registerUser() {
-        String name =  mfullname.getText().toString().trim();
+        String name =  mfullname.getText().toString().trim().toLowerCase();
 //        String username =  musername.getText().toString().trim();
         String email = mEmailAddress.getText().toString().trim();
         String password = mCreatePassword.getText().toString().trim();
