@@ -14,15 +14,22 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.Notifications.Client;
+import com.example.myapplication.Notifications.Data;
+import com.example.myapplication.Notifications.MyResponse;
+import com.example.myapplication.Notifications.Sender;
+import com.example.myapplication.Notifications.Token;
 import com.example.myapplication.t1adapters.ChatMessageRetreive;
 import com.example.myapplication.t2models.ChatMessage;
 import com.example.myapplication.t2models.User;
+import com.example.myapplication.t2models.userlist;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -30,6 +37,9 @@ import java.util.HashMap;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class messageAct extends AppCompatActivity {
     CircleImageView profile_image;
@@ -46,6 +56,9 @@ public class messageAct extends AppCompatActivity {
     ChatMessageRetreive chatMessageRetreive;
     List<ChatMessage> mchat;
     RecyclerView mrecyclerviewchatmessages;
+    APIServices apiService;
+
+    boolean notify = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +73,9 @@ public class messageAct extends AppCompatActivity {
         username = findViewById(R.id.username);
         btn_send = findViewById(R.id.btn_send);
         text_send = findViewById(R.id.text_send);
+
+        apiService = Client.getClient("https://fcm.googleapis.com/").create(APIServices.class);
+//        apiService = Client.getClient("htt")
 
         mbacktomessagelist = findViewById(R.id.backtomessagelist);
         LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(getApplicationContext());
@@ -82,9 +98,10 @@ public class messageAct extends AppCompatActivity {
         fuser = FirebaseAuth.getInstance().getCurrentUser();
 
         btn_send.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
-//                notify = true;
+                notify = true;
                 String msg = text_send.getText().toString();
                 if (!msg.equals("")){
                     sendMessage(fuser.getUid(), userid, msg);
@@ -128,6 +145,25 @@ public class messageAct extends AppCompatActivity {
         hashMap.put("message", message);
 
         reference.child("Chats").push().setValue(hashMap);
+
+        final String msg = message;
+
+        reference = FirebaseDatabase.getInstance().getReference("users").child(fuser.getUid());
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                userlist userlist = dataSnapshot.getValue(userlist.class);
+                if (notify) {
+                    sendNotifiaction(receiver, userlist.getName(), msg);
+                }
+                notify = false;
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private void readMesagges(final String myid, final String userid, final String imageurl){
@@ -146,6 +182,43 @@ public class messageAct extends AppCompatActivity {
                     }
                     chatMessageRetreive = new ChatMessageRetreive(messageAct.this, mchat, imageurl);
                     mrecyclerviewchatmessages.setAdapter(chatMessageRetreive);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void sendNotifiaction(String receiver, final String username, final String message){
+        DatabaseReference tokens = FirebaseDatabase.getInstance().getReference("Tokens");
+        Query query = tokens.orderByKey().equalTo(receiver);
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    Token token = snapshot.getValue(Token.class);
+                    Data data = new Data(fuser.getUid(), R.mipmap.ic_launcher, username+": "+message, "New Message", userid);
+
+                    Sender sender = new Sender(data, token.getToken());
+
+                    apiService.sendNotification(sender).enqueue(new Callback<MyResponse>() {
+                                @Override
+                                public void onResponse(Call<MyResponse> call, Response<MyResponse> response) {
+                                    if (response.code() == 200){
+                                        if (response.body().success != 1){
+                                            Toast.makeText(messageAct.this, "Failed!", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(Call<MyResponse> call, Throwable t) {
+
+                                }
+                            });
                 }
             }
 

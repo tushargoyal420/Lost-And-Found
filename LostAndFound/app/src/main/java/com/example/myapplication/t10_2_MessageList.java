@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import com.example.myapplication.Notifications.Token;
 import com.example.myapplication.t1adapters.getuserinlistAdapter;
 import com.example.myapplication.t2models.ChatMessage;
 import com.example.myapplication.t2models.Chatlist;
@@ -23,6 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -117,7 +119,16 @@ public class t10_2_MessageList extends AppCompatActivity {
 
             }
         });
+
+        updateToken(String.valueOf(FirebaseMessaging.getInstance().getToken()));
+//        updateToken(FirebaseInstanceId.getInstance().getToken());
     }
+    private void updateToken(String token){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Tokens");
+        Token token1 = new Token(token);
+        reference.child(fuser.getUid()).setValue(token1);
+    }
+
 
     private void searchUsers(String s) {
         final FirebaseUser fuser = FirebaseAuth.getInstance().getCurrentUser();
