@@ -51,22 +51,15 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
 
         msSignUpButton.setOnClickListener(this);
         mAlreadyHaveAnAccount.setOnClickListener(this);
-
-
     }
 
     private void registerUser() {
-        String name =  mfullname.getText().toString().trim().toLowerCase();
-//        String username =  musername.getText().toString().trim();
+        String name =  mfullname.getText().toString().trim();
+        //        String username =  musername.getText().toString().trim();
         String email = mEmailAddress.getText().toString().trim();
         String password = mCreatePassword.getText().toString().trim();
         String phnnum =  mphonenumber.getText().toString().trim();
 
-        //check is user enter details or not
-//        if (TextUtils.isEmpty(username)) {
-//            mCreatePassword.setError("Please enter an username");
-//            return;
-//        }
         if (TextUtils.isEmpty(email)) {
             mEmailAddress.setError("Please enter an Email");
             return;
@@ -96,7 +89,6 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
                              @Override
                              public void onComplete(@NonNull Task<Void> task) {
                                  if (task.isSuccessful()) {
-
                                      Toast.makeText(context, "successful", Toast.LENGTH_SHORT).show();
                                      // for realtime database
                                      userid = fAuth.getCurrentUser().getUid();
@@ -126,15 +118,12 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
              });
          }
     }
-
     @Override
     public void onClick(View view) {
         if (view == msSignUpButton) {
-            // Register user
             registerUser();
         } else if (view == mAlreadyHaveAnAccount) {
             finish();
-            // Redirect to login activity
             startActivity(new Intent(this, t4_LoginActivity.class));
         }
     }

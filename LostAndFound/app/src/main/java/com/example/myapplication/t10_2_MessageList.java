@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.example.myapplication.Notifications.Token;
 import com.example.myapplication.t1adapters.getuserinlistAdapter;
 import com.example.myapplication.t2models.ChatMessage;
@@ -25,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.FirebaseMessagingService;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -120,8 +122,10 @@ public class t10_2_MessageList extends AppCompatActivity {
             }
         });
 
-        updateToken(String.valueOf(FirebaseMessaging.getInstance().getToken()));
+//        updateToken(String.valueOf(FirebaseMessaging.getInstance().getToken()));
 //        updateToken(FirebaseInstanceId.getInstance().getToken());
+        updateToken(FirebaseInstanceId.getInstance().getToken());
+//        updateToken(FirebaseMessagingService);
     }
     private void updateToken(String token){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Tokens");
@@ -150,7 +154,7 @@ public class t10_2_MessageList extends AppCompatActivity {
 
 //                userAdapter = new UserAdapter(getContext(), mUsers, false);
 //                recyclerView.setAdapter(userAdapter);
-                userAdapter = new getuserinlistAdapter(t10_2_MessageList.this, mUsers);
+                userAdapter = new getuserinlistAdapter(t10_2_MessageList.this, mUsers,true);
                 recyclerviewmessageslist222.setAdapter(userAdapter);
             }
 
@@ -194,7 +198,7 @@ public class t10_2_MessageList extends AppCompatActivity {
 //                }
 //                userAdapter.notifyDataSetChanged();
 //                userAdapter.notifyDataSetChanged();
-                userAdapter = new getuserinlistAdapter(t10_2_MessageList.this, mUsers);
+                userAdapter = new getuserinlistAdapter(t10_2_MessageList.this, mUsers,true);
                 recyclerviewmessageslist222.setAdapter(userAdapter);
             }
             @Override

@@ -15,34 +15,50 @@
         android:padding="5dp"
         android:layout_margin="5dp"
         >
-        <ImageView
-            android:id="@+id/userimageinlist"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            tools:srcCompat="@tools:sample/avatars"
-            android:layout_marginRight="20dp"
-            android:layout_marginEnd="20dp"
-            android:contentDescription="@string/useimage" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/userimageinlist"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
+        android:contentDescription="@string/useimage"
+        />
+
+        <!--        <ImageView-->
+<!--            android:id="@+id/userimageinlist"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            tools:srcCompat="@tools:sample/avatars"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:contentDescription="@string/useimage" -->
+<!--            />-->
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="60dp"
+            android:orientation="vertical"
+            >
             <TextView
                 android:id="@+id/usernameinlist"
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:hint="@string/username"
-                android:layout_gravity="center"
                 android:textSize="20sp"
+                android:layout_gravity="center_vertical"
                 android:textColor="@color/black"
+                android:layout_weight="2"
                 />
+
             <TextView
-                android:id="@+id/lastmessege"
+                android:layout_weight="1"
                 android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:hint="Last message"
                 android:layout_height="25dp"
+                android:id="@+id/lastmessege"
                 android:layout_gravity="center_vertical"
                 android:textSize="15sp"
-                />
+                android:maxLines="1"/>
 
         </LinearLayout>
     </LinearLayout>

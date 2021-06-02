@@ -62,7 +62,7 @@ public class t10_Message extends AppCompatActivity{
         mrecyclerviewmessageslist.setHasFixedSize(true);
         mrecyclerviewmessageslist.setLayoutManager(new LinearLayoutManager(this));
         readUsers();
-        userAdapter = new getuserinlistAdapter(this, mUsers);
+        userAdapter = new getuserinlistAdapter(this, mUsers,true);
         mrecyclerviewmessageslist.setAdapter(userAdapter);
 //        mrecyclerviewmessageslist.setLayoutManager(new LinearLayoutManager(this));
 //        list2 = new ArrayList<>();
