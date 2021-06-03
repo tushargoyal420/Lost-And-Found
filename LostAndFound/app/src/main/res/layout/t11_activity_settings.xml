@@ -7,36 +7,44 @@
     tools:context=".Activity.t13_settings"
     android:background="@drawable/backgroundhomescreen"
     >
-    <ImageButton
-        android:id="@+id/backbuttonsettings"
-        android:layout_width="39dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="11dp"
-        android:background="#FFFFFF"
-        android:contentDescription="@string/backbutton"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/backbut" />
 
-    <ImageView
-        android:id="@+id/settingsheadingtext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="11dp"
+    <LinearLayout
+        android:id="@+id/linearLayout222"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:foregroundGravity="center_horizontal"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/backbuttonsettings"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/settingsheadtext"
-        android:contentDescription="@string/settings" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/backbuttonsettings"
+            android:layout_width="39dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#FFFFFF"
+            android:contentDescription="@string/backbutton"
+            app:srcCompat="@drawable/backbut" />
+
+        <TextView
+            android:id="@+id/messagesheading"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:text="@string/settings"
+            android:textColor="@color/themecolor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerviewmessageslist"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -48,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settingsheadingtext">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout222">
 
         <ImageButton
             android:id="@+id/logoutlistbut"

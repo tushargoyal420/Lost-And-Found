@@ -7,17 +7,19 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.example.myapplication.R;
 import com.google.firebase.auth.FirebaseAuth;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class t6_Dashboard_Activity extends AppCompatActivity implements View.OnClickListener {
-    ImageButton mlogoutbut, mmessagesbut, mmyaccountbut, msettingbut;
+    CircleImageView mmessagesbut, mmyaccountbut, msettingbut;
+//ImageButton  mmessagesbut;
     Button milostsomethingbut2, mifoundsomethingbut2;
     FirebaseAuth fAuth;
-    private Fragment MessageFragment;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +39,7 @@ public class t6_Dashboard_Activity extends AppCompatActivity implements View.OnC
 
         msettingbut = findViewById(R.id.settingbut);
         msettingbut.setOnClickListener(this);
+
     }
 
 //    public void replaceFragment(Fragment someFragment) {
@@ -55,7 +58,11 @@ public class t6_Dashboard_Activity extends AppCompatActivity implements View.OnC
             startActivity(new Intent(this, t8_1_show_found_items.class));
         }
         else if (view == mmyaccountbut) {
-            startActivity(new Intent(this, t12_My_account.class));
+            String currentuser =fAuth.getCurrentUser().getUid();
+            Intent intent=new Intent(t6_Dashboard_Activity.this, t12_My_account.class);
+            intent.putExtra("CurrentUser",currentuser);
+            startActivity(intent);
+
         }
         else if (view == mmessagesbut) {
 //            startActivity(new Intent(this, t10_Message.class));

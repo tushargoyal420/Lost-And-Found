@@ -59,30 +59,17 @@ public class t11_2_Messagelist_recentusers extends AppCompatActivity {
         recyclerviewmessageslist222 = findViewById(R.id.recyclerviewmessageslist222);
         recyclerviewmessageslist222.setHasFixedSize(true);
         recyclerviewmessageslist222.setLayoutManager(new LinearLayoutManager(this));
-//        userAdapter = new getuserinlistAdapter(this, mUsers);
-//        recyclerviewmessageslist222.setAdapter(userAdapter);
         fuser = FirebaseAuth.getInstance().getCurrentUser();
-//         mUsers= new ArrayList<>();
-//        usersList = new ArrayList<>();
-//        userAdapter = new getuserinlistAdapter(this, mUsers);
-//        recyclerviewmessageslist222.setAdapter(userAdapter);
-
         msearch_users =findViewById(R.id.search_users);
         msearch_users.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                searchUsers(charSequence.toString().toLowerCase());
-            }
+                searchUsers(charSequence.toString().toLowerCase()); }
 
             @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
+            public void afterTextChanged(Editable editable) { }
         });
         Lists = new ArrayList<>();
 
@@ -118,10 +105,7 @@ public class t11_2_Messagelist_recentusers extends AppCompatActivity {
             }
         });
 
-//        updateToken(String.valueOf(FirebaseMessaging.getInstance().getToken()));
-//        updateToken(FirebaseInstanceId.getInstance().getToken());
         updateToken(FirebaseInstanceId.getInstance().getToken());
-//        updateToken(FirebaseMessagingService);
     }
     private void updateToken(String token){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Tokens");
@@ -147,19 +131,14 @@ public class t11_2_Messagelist_recentusers extends AppCompatActivity {
                         mUsers.add(user);
                     }
                 }
-
-//                userAdapter = new UserAdapter(getContext(), mUsers, false);
-//                recyclerView.setAdapter(userAdapter);
                 userAdapter = new getuserinlistAdapter(t11_2_Messagelist_recentusers.this, mUsers,true);
                 recyclerviewmessageslist222.setAdapter(userAdapter);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
-
     }
 
     private void chatListf() {
@@ -199,7 +178,6 @@ public class t11_2_Messagelist_recentusers extends AppCompatActivity {
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }

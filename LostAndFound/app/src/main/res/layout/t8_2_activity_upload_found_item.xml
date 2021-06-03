@@ -7,168 +7,160 @@
     tools:context=".Activity.t8_2_upload_found_item"
     android:background="@drawable/backgroundhomescreen"
     >
-
-    <ImageButton
-        android:id="@+id/ifoundsomethinghead"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="#FFFFFF"
-        android:contentDescription="@string/I_found_something"
+    <LinearLayout
+        android:id="@+id/linearLayout222"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:foregroundGravity="center_horizontal"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.223"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ifoundsomethingheadtext" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageButton
-        android:id="@+id/backbutfound"
-        android:layout_width="39dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#FFFFFF"
-        android:contentDescription="@string/backbutton"
-        app:layout_constraintEnd_toStartOf="@+id/ifoundsomethinghead"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/backbut" />
+        <ImageButton
+            android:id="@+id/backbutfound"
+            android:layout_width="39dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#FFFFFF"
+            android:contentDescription="@string/backbutton"
+            app:srcCompat="@drawable/backbut" />
+        <TextView
+            android:id="@+id/messagesheading"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:text="@string/upload_found_item"
+            android:textColor="@color/themecolor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerviewmessageslist"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/foundlayout1"
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
+        android:background="@color/white"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:paddingTop="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ifoundsomethinghead"
-        app:layout_constraintVertical_bias="0.0">
+        android:paddingBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottombuttons"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout222"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-16dp">
 
-        <LinearLayout
+        <ImageView
+            android:id="@+id/addfoundimgpreview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="250dp"
+            android:contentDescription="@string/userprofileimage"
+            android:src="@mipmap/itemimage"
+            />
 
-            <ImageView
-                android:id="@+id/addfoundimgpreview"
-                android:layout_width="250dp"
-                android:layout_height="180dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:background="#FFFFFF"
-                android:contentDescription="@string/addimage"
-                app:srcCompat="@drawable/addimage" />
-
-            <Button
-                android:id="@+id/uploadfoundimagebut"
-                android:layout_width="110dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="0dp"
-                android:text="@string/select_image"
-                android:textColor="@color/themecolor"
-                android:textStyle="bold"
-                app:backgroundTint="#FFFFFF" />
-
-
-        </LinearLayout>
+        <Button
+            android:id="@+id/uploadfoundimagebut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:text="@string/select_image"
+            android:textColor="@color/themecolor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFFFFF" />
 
         <EditText
             android:id="@+id/nameofitem"
-            android:layout_width="375dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:autofillHints=""
-            android:background="@drawable/backgrountedittext"
-            android:ems="10"
+            android:gravity="center"
             android:hint="@string/name_of_item"
-            android:inputType="textPersonName"
-            android:padding="15dp"
-            android:shadowColor="#000000"
+            android:padding="10dp"
             android:textColor="@color/themecolor"
-            android:textColorHint="#A4455D5C" />
-
-        <!--        <EditText-->
-        <!--            android:id="@+id/typeofitem"-->
-        <!--            android:layout_width="375dp"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginTop="20dp"-->
-        <!--            android:autofillHints=""-->
-        <!--            android:background="@drawable/backgrountedittext"-->
-        <!--            android:ems="10"-->
-        <!--            android:hint="@string/type_of_item"-->
-        <!--            android:inputType="textPersonName"-->
-        <!--            android:padding="15dp"-->
-        <!--            android:shadowColor="#000000"-->
-        <!--            android:textColor="@color/themecolor"-->
-        <!--            android:textColorHint="#A4455D5C" />-->
-
-        <EditText
-            android:id="@+id/place"
-            android:layout_width="375dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:autofillHints=""
-            android:background="@drawable/backgrountedittext"
-            android:ems="10"
-            android:hint="@string/where_you_find_it"
-            android:inputType="textPersonName"
-            android:padding="15dp"
-            android:shadowColor="#000000"
-            android:textColor="@color/themecolor"
-            android:textColorHint="#A4455D5C" />
-
-        <EditText
-            android:id="@+id/descriptionofitem"
-            android:layout_width="375dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:autofillHints=""
-            android:background="@drawable/backgrountedittext"
-            android:ems="10"
-            android:hint="@string/description_of_item"
-            android:inputType="textPersonName"
-            android:padding="15dp"
-            android:shadowColor="#000000"
-            android:textColor="@color/themecolor"
-            android:textColorHint="#A4455D5C" />
-
-        <EditText
-            android:id="@+id/date"
-            android:layout_width="375dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:autofillHints=""
-            android:background="@drawable/backgrountedittext"
-            android:ems="10"
-            android:hint="@string/other"
-            android:inputType="textPersonName"
-            android:padding="15dp"
-            android:shadowColor="#000000"
-            android:textColor="@color/themecolor"
-            android:textColorHint="#A4455D5C" />
-
-        <Button
-            android:id="@+id/foundsubmitbut"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:padding="15dp"
-            android:text="@string/submitbutton"
-            android:textColor="#455D5C"
-            android:textSize="20sp"
+            android:textColorHint="#77455D5C"
+            android:textSize="30sp"
             android:textStyle="bold"
-            app:backgroundTint="#FFFFFF"
-            app:cornerRadius="10dp" />
+            android:inputType="textPersonName"
+            />
 
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <EditText
+                android:id="@+id/place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:padding="5dp"
+                android:hint="@string/where_you_find_it"
+                android:textColor="@color/themecolor"
+                android:textColorHint="#77455D5C"
+                android:textSize="20sp"
+                android:inputType="textPersonName"
+                />
+
+            <EditText
+                android:id="@+id/descriptionofitem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:hint="@string/enter_description"
+                android:textColor="@color/themecolor"
+                android:textColorHint="#77455D5C"
+                android:textSize="20sp"
+                android:inputType="text"
+                />
+            <EditText
+                android:id="@+id/date"
+                android:clickable="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:text="@string/select_date"
+                android:textColor="@color/themecolor"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ddd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:gravity="center"
+            android:id="@+id/foundsubmitbut"
+            android:textStyle="bold"
+            android:background="@color/white"
+            android:textColor="@color/themecolor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/upload"
+            android:textSize="25sp"
+            />
 
     </LinearLayout>
 

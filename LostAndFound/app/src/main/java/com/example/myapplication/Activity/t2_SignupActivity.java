@@ -1,5 +1,6 @@
 package com.example.myapplication.Activity;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
     private EditText mfullname, mEmailAddress, mCreatePassword, musername , mphonenumber;
     private Button msSignUpButton, mAlreadyHaveAnAccount;
     private Context context = this;
+    ProgressDialog mprogressDialog;
 
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
     private DatabaseReference root;
@@ -38,6 +40,7 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mprogressDialog = new ProgressDialog(this);
         setContentView(R.layout.t2_activity_signup);
         mfullname = findViewById(R.id.fullname);
 //        musername= findViewById(R.id.username);
@@ -78,6 +81,12 @@ public class t2_SignupActivity extends AppCompatActivity implements View.OnClick
 //            return;
         }
         else {
+             mprogressDialog.setMessage("Registering...");
+             mprogressDialog.show();
+             mprogressDialog.onBackPressed();
+             mprogressDialog.setCancelable(false);
+             mprogressDialog.setCanceledOnTouchOutside(false);
+
              //registration
              fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                  @Override

@@ -51,7 +51,7 @@ public class getuserinlistAdapter extends RecyclerView.Adapter<getuserinlistAdap
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final User user = mUsers.get(position);
         holder.username.setText(user.getName());
-        holder.profile_image.setImageResource(R.mipmap.profileicon);
+        holder.profile_image.setImageResource(R.mipmap.myaccountimageasset);
 
         if (ischat){
             lastMessage(user.getId(), holder.last_msg);

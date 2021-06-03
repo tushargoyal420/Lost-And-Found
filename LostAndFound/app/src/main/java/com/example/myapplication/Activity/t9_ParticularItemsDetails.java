@@ -23,15 +23,12 @@ import com.squareup.picasso.Picasso;
 
 public class t9_ParticularItemsDetails extends AppCompatActivity {
     ImageView mitemimage;
-    TextView mitemname, mitemdes, mitemdate, mitemplace, muser,musernameonscreen, msameuser;
+    TextView mitemname, mitemdes, mitemdate, mitemplace, msendmessage , muser,musernameonscreen, msameuser;
     ImageButton mbacktofounditemlist;
-    Button msendmessage;
+//    Button msendmessage;
     DatabaseReference ref, DataRef;
     FirebaseAuth fAuth;
     private String User;
-//    RecyclerView mrecyclerviewitem;
-//    FirebaseRecyclerAdapter<Itemdetails, MyViewHolder3> adapter3;
-//    FirebaseRecyclerOptions<Itemdetails> options;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +39,9 @@ public class t9_ParticularItemsDetails extends AppCompatActivity {
         mitemdes = findViewById(R.id.itemdes);
         mitemdate = findViewById(R.id.itemdate);
         mitemplace = findViewById(R.id.itemplace);
-//        muser = findViewById(R.id.user);
-        msameuser = findViewById(R.id.sameuser);
-//        musernameonscreen = findViewById(R.id.usernameonscreen);
+//        msameuser = findViewById(R.id.sameuser);
         msendmessage = findViewById(R.id.sendmessage222);
+
         fAuth = FirebaseAuth.getInstance();
         User = fAuth.getCurrentUser().getUid();   //current user
         mbacktofounditemlist = findViewById(R.id.backtofounditemlist);
@@ -55,13 +51,6 @@ public class t9_ParticularItemsDetails extends AppCompatActivity {
                 finish();
             }
         });
-//        mrecyclerviewitem = findViewById(R.id.recyclerviewitem);
-//        mrecyclerviewitem.setLayoutManager(new LinearLayoutManager(this));
-//            LoadData(ItemKey);
-//        ref.child(ItemKey).addValueEventListener(new ValueEventListener() {
-
-//        ref = FirebaseDatabase.getInstance().getReference().child("founditems");
-//        mtextViewid.setText(ItemKey);
         data();
     }
     public void data(){
@@ -78,34 +67,25 @@ public class t9_ParticularItemsDetails extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-//                    String itemName = dataSnapshot.child("name_of_Item").getValue().toString();
-//                    String itemDate = dataSnapshot.child("date").getValue().toString();
-//                    String itemDes = dataSnapshot.child("description").getValue().toString();
-//                    String itemPlace = dataSnapshot.child("place").getValue().toString();
-//                    String muser2 = dataSnapshot.child("user").getValue().toString();
-//                    String ImageUrl = dataSnapshot.child("imageUri").getValue().toString();
-                    Itemdetails model= dataSnapshot.getValue(Itemdetails.class);
+                 Itemdetails model= dataSnapshot.getValue(Itemdetails.class);
                     mitemname.setText(model.getName_of_Item());
                     mitemdes.setText(model.getDescription());
                     mitemdate.setText(model.getDate());
                     mitemplace.setText(model.getPlace());
                     Picasso.get().load(model.getImageUri()).into(mitemimage);
                     String userdata= model.getUser();
-//                    muser.setText(userdata);
-//                    musernameonscreen.setText(model.getUser());
-
+                    String youupload= "You uploaded this item";
                     if(String.valueOf(userdata).equals(String.valueOf(User))){
-                        msendmessage.setVisibility(View.INVISIBLE);
-                        msameuser.setVisibility(View.VISIBLE);
+//                        msendmessage.setVisibility(View.INVISIBLE);
+                        msendmessage.setText(youupload);
+//                        msameuser.setVisibility(View.VISIBLE);
                     }else{
-                        msendmessage.setVisibility(View.VISIBLE);
-                        msameuser.setVisibility(View.INVISIBLE);
-
+//                        msendmessage.setVisibility(View.VISIBLE);
+//                        msameuser.setVisibility(View.INVISIBLE);
                         msendmessage.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 Intent intent = new Intent(t9_ParticularItemsDetails.this, t10_SendMessageToUser.class);
-//                                String userdata2= "Y1SJTq8uYETM9E8d0kxEfhj9FQ63";
                                 intent.putExtra("userid", model.getUser());
                                 startActivity(intent);
                             }
@@ -117,7 +97,4 @@ public class t9_ParticularItemsDetails extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {}
         });
     }
-
-
-
 }

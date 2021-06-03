@@ -7,71 +7,65 @@
     android:layout_height="match_parent"
     android:background="@color/themecolor"
     tools:context=".Activity.t8_1_show_found_items">
+
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="50dp"
         android:background="@color/white"
         android:foregroundGravity="center_horizontal"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerviewmessageslist"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-
-    <ImageButton
-        android:gravity="center"
-        android:id="@+id/backtodashfromfound"
-        android:layout_width="39dp"
-        android:layout_height="31dp"
-        android:background="#FFFFFF"
-        android:contentDescription="@string/backbutton"
-        app:layout_constraintEnd_toStartOf="@+id/ilostsomethingheadtext"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_weight="0.1"
-        app:srcCompat="@drawable/backbut" />
-
-        <TextView
-            android:gravity="center"
-            android:textAlignment="textStart"
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/first"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="0.8"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:id="@+id/backtodashfromfound"
+                android:layout_width="39dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:background="#FFFFFF"
+                android:contentDescription="@string/backbutton"
+                app:srcCompat="@drawable/backbut" />
+            <TextView
+                android:id="@+id/messagesheading"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="@string/found_items"
+                android:textColor="@color/themecolor"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/recyclerviewmessageslist"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:paddingStart="20dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="70dp"
             android:layout_height="match_parent"
-            app:layout_constraintEnd_toStartOf="@+id/addfounditembut"
-            app:layout_constraintStart_toEndOf="@+id/backtouploadfound"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="@string/found_items"
-            android:textStyle="bold"
-            android:textColor="@color/themecolor"
-            android:layout_weight="4"
-            android:textSize="22sp"
-            tools:ignore="RtlCompat" />
-
-        <ImageButton
-            android:id="@+id/addfounditembut"
-            android:layout_width="61dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:foregroundGravity="right"
-            android:gravity="center"
-            android:src="@drawable/addfounditem"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            android:orientation="horizontal"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            >
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/addfounditembut"
+                android:background="@color/white"
+                android:src="@drawable/addfounditem"
+                />
+        </LinearLayout>
     </LinearLayout>
-
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-    <!--    <ListView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:id="@+id/listvieww"-->
-<!--        tools:layout_editor_absoluteX="97dp"-->
-<!--        tools:layout_editor_absoluteY="477dp" />-->
 
     <LinearLayout
         android:layout_width="match_parent"

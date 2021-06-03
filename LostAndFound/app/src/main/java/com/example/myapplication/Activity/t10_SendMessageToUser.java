@@ -42,14 +42,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class t10_SendMessageToUser extends AppCompatActivity {
-    CircleImageView profile_image;
     TextView username;
     FirebaseUser fuser;
     DatabaseReference reference;
     ImageButton btn_send, mbacktomessagelist;
     EditText text_send;
     Intent intent;
-    ValueEventListener seenListener;
     String userid;
     FirebaseAuth fAuth;
 
@@ -117,6 +115,14 @@ public class t10_SendMessageToUser extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 username.setText(user.getName());
+                username.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(t10_SendMessageToUser.this,t14_particularUserDetails.class);
+                        intent.putExtra("openuserid", user.getId());
+                        startActivity(intent);
+                    }
+                });
 //                if (user.getImageURL().equals("default")){
 //                    profile_image.setImageResource(R.mipmap.ic_launcher);
 //                } else {

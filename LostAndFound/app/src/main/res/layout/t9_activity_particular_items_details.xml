@@ -8,15 +8,13 @@
     tools:context=".Activity.t9_ParticularItemsDetails"
     android:background="@color/themecolor"
     >
-
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/linearLayout222"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="50dp"
         android:background="@color/white"
-        android:gravity="center_vertical"
+        android:foregroundGravity="center_horizontal"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -27,136 +25,175 @@
             android:layout_height="31dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
             android:background="#FFFFFF"
             android:contentDescription="@string/backbutton"
             app:srcCompat="@drawable/backbut" />
 
         <TextView
-            android:gravity="center"
-            android:id="@+id/textView2"
+            android:id="@+id/messagesheading"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="20dp"
             android:text="@string/item_details"
             android:textColor="@color/themecolor"
-            android:textSize="25sp"
+            android:textSize="23sp"
             android:textStyle="bold"
-            app:layout_constraintHorizontal_bias="0.476"
-            app:layout_constraintStart_toEndOf="@+id/backtoitemlist"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerviewmessageslist"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
     </LinearLayout>
 
-    <!--        <TextView-->
-    <!--            android:id="@+id/usernameonscreen"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="match_parent"-->
-    <!--            android:gravity="end"-->
-    <!--            android:paddingRight="10dp"-->
-    <!--            android:text="TextView"-->
-    <!--            android:textAlignment="textEnd"-->
-    <!--            android:textColor="#000000"-->
-    <!--            android:textSize="22sp"-->
-    <!--            android:textStyle="bold"-->
-    <!--            app:layout_constraintEnd_toEndOf="parent"-->
-    <!--            app:layout_constraintStart_toEndOf="@+id/textView2"-->
-    <!--            app:layout_constraintTop_toTopOf="parent" />-->
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
         android:gravity="center_horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backtouploadfound">
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottombuttons"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout222"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-16dp">
 
         <ImageView
             android:id="@+id/itemimage"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            />
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:contentDescription="@string/userprofileimage"
+            android:src="@mipmap/itemimage" />
 
         <TextView
             android:id="@+id/itemname"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@color/white"
-            android:padding="5dp"
-            android:paddingStart="20dp"
-            android:paddingLeft="20dp"
-            android:text="@string/name_of_item"
-            android:textColor="@color/themecolor"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/itemdes"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@color/white"
-            android:padding="5dp"
-            android:paddingStart="20dp"
-            android:paddingLeft="20dp"
-            android:text="@string/description_of_item"
-            android:textColor="@color/themecolor"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/itemdate"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@color/white"
-            android:padding="5dp"
-            android:paddingStart="20dp"
-            android:paddingLeft="20dp"
-            android:text="@string/date"
-            android:textColor="@color/themecolor"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/itemplace"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@color/white"
-            android:padding="5dp"
-            android:paddingStart="20dp"
-            android:paddingLeft="20dp"
-            android:text="@string/place"
-            android:textColor="@color/themecolor"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/sameuser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@color/purple_500"
-            android:padding="15dp"
             android:gravity="center"
-            android:paddingStart="20dp"
-            android:paddingLeft="20dp"
-            android:text="@string/you_uploaded_this_item"
-            android:textColor="@color/white"
-            android:visibility="visible"
-            android:textSize="25sp" />
-        <Button
-            android:id="@+id/sendmessage222"
+            android:hint="@string/loading"
+            android:padding="10dp"
+            android:textColor="@color/themecolor"
+            android:textColorHint="#77455D5C"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:padding="15dp"
-            android:paddingStart="20dp"
+            android:orientation="vertical"
             android:paddingLeft="20dp"
-            android:text="@string/send_message"
+            android:paddingRight="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/datehead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/date"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/themecolor"
+                    android:textColorHint="#77455D5C"
+                    android:textSize="20sp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:id="@+id/itemdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/loading"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/themecolor"
+                    android:textColorHint="#77455D5C"
+                    android:textSize="20sp"
+                    tools:ignore="RtlCompat" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/placehead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/place"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/themecolor"
+                    android:textColorHint="#77455D5C"
+                    android:textSize="20sp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:id="@+id/itemplace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/loading"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/themecolor"
+                    android:textColorHint="#77455D5C"
+                    android:textSize="20sp"
+                    tools:ignore="RtlCompat" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/itemdes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/loading"
+                android:textColor="@color/themecolor"
+                android:textColorHint="#77455D5C"
+                android:textSize="20sp"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ddd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:gravity="center"
+            android:id="@+id/sendmessage222"
+            android:textStyle="bold"
+            android:background="@color/white"
             android:textColor="@color/themecolor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/send_message"
             android:textSize="25sp"
-            android:visibility="invisible"
-            app:backgroundTint="#FFFFFF" />
+            />
 
     </LinearLayout>
 

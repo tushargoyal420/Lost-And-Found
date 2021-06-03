@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".Activity.t9_ParticularItemsDetails"></activity>
+        <activity android:name=".Activity.t14_particularUserDetails"></activity>
+        <activity android:name=".Activity.t9_ParticularItemsDetails" />
         <activity android:name=".Activity.t11_2_Messagelist_recentusers" />
         <activity android:name=".Activity.t10_SendMessageToUser" />
         <activity android:name=".Activity.t7_1_show_lost_item" />
