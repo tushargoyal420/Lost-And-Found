@@ -26,9 +26,10 @@ public class t7_1_show_lost_item extends AppCompatActivity {
     private ImageButton mbacktodashfromlost, maddlostitembut;
     private EditText minputSearchLost;
     private RecyclerView mrecyclerViewlost;
+
     private FirebaseRecyclerAdapter<Itemdetails, RetreiveItemsIntoList> adapter2;
     private FirebaseRecyclerOptions<Itemdetails> options;
-    private  DatabaseReference PostRef= FirebaseDatabase.getInstance().getReference().child("lostitems");;
+    private  DatabaseReference PostRef= FirebaseDatabase.getInstance().getReference().child("lostitems");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,26 +51,11 @@ public class t7_1_show_lost_item extends AppCompatActivity {
             }
         });
 
-//RecyclerView
         mrecyclerViewlost = findViewById(R.id.recyclerviewlost);
         mrecyclerViewlost.setLayoutManager(new LinearLayoutManager(this));
 
         minputSearchLost=findViewById(R.id.minputSearchFound);
         LoadPost();
-//        root.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-//                for(DataSnapshot dataSnapshot: snapshot.getChildren()){
-//                    Itemdetails itemdetails= dataSnapshot.getValue(Itemdetails.class);
-//                    list.add(model);
-//                }
-//                adapter.notifyDataSetChanged();
-//            }
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//            }
-//        });
     }
     private void LoadPost() {
         options= new FirebaseRecyclerOptions.Builder<Itemdetails>().setQuery(PostRef, Itemdetails.class).build();
@@ -79,7 +65,10 @@ public class t7_1_show_lost_item extends AppCompatActivity {
                 holder.itemname.setText(itemdetails.getName_of_Item());
                 holder.itemplace.setText(itemdetails.getPlace());
                 holder.itemdate.setText(itemdetails.getDate());
-                Picasso.get().load(itemdetails.getImageUri()).into(holder.itemimage);
+
+                Picasso.get()
+                        .load(itemdetails.getImageUri())
+                        .into(holder.itemimage);
 
                 holder.card.setOnClickListener(new View.OnClickListener() {
                     @Override

@@ -73,15 +73,12 @@ public class t9_ParticularItemsDetails extends AppCompatActivity {
                     mitemdate.setText(model.getDate());
                     mitemplace.setText(model.getPlace());
                     Picasso.get().load(model.getImageUri()).into(mitemimage);
+
                     String userdata= model.getUser();
                     String youupload= "You uploaded this item";
                     if(String.valueOf(userdata).equals(String.valueOf(User))){
-//                        msendmessage.setVisibility(View.INVISIBLE);
                         msendmessage.setText(youupload);
-//                        msameuser.setVisibility(View.VISIBLE);
                     }else{
-//                        msendmessage.setVisibility(View.VISIBLE);
-//                        msameuser.setVisibility(View.INVISIBLE);
                         msendmessage.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -98,3 +95,42 @@ public class t9_ParticularItemsDetails extends AppCompatActivity {
         });
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//                        msendmessage.setVisibility(View.INVISIBLE);
+//                        msameuser.setVisibility(View.VISIBLE);
+//                        msendmessage.setVisibility(View.VISIBLE);
+//                        msameuser.setVisibility(View.INVISIBLE);

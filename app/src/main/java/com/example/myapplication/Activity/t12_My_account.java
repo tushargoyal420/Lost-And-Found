@@ -40,7 +40,6 @@ public class t12_My_account extends AppCompatActivity {
     FirebaseAuth fAuth;
     private String User;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

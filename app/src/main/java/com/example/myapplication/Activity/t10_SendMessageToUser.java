@@ -1,4 +1,4 @@
-package com.example.myapplication.Activity;
+ package com.example.myapplication.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -89,13 +89,9 @@ public class t10_SendMessageToUser extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         intent = getIntent();
         userid = intent.getStringExtra("userid");
-
-//        userid = fAuth.getCurrentUser().getUid();
-//        userid= "Y1SJTq8uYETM9E8d0kxEfhj9FQ63";
         fuser = FirebaseAuth.getInstance().getCurrentUser();
 
         btn_send.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 notify = true;

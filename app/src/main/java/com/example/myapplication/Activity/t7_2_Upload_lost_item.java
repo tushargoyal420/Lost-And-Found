@@ -47,7 +47,9 @@ public class t7_2_Upload_lost_item extends AppCompatActivity {
     ImageView maddlostimgepreview;
     TextView mlostsubmitbut;
     Calendar myCalendar;
+
     ProgressDialog mprogressDialog;
+
     FirebaseAuth fAuth;
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
     private DatabaseReference root = db.getReference().child("lostitems");
@@ -69,11 +71,10 @@ public class t7_2_Upload_lost_item extends AppCompatActivity {
         myCalendar = Calendar.getInstance();
 
         mdate = findViewById(R.id.date);
+
         DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
             @Override
-            public void onDateSet(DatePicker view, int year, int monthOfYear,
-                                  int dayOfMonth) {
-                // TODO Auto-generated method stub
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 myCalendar.set(Calendar.YEAR, year);
                 myCalendar.set(Calendar.MONTH, monthOfYear);
                 myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
@@ -83,13 +84,9 @@ public class t7_2_Upload_lost_item extends AppCompatActivity {
         };
 
         mdate.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-                new DatePickerDialog(t7_2_Upload_lost_item.this, date, myCalendar
-                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                new DatePickerDialog(t7_2_Upload_lost_item.this, date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),  myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
         //Image
@@ -118,8 +115,6 @@ public class t7_2_Upload_lost_item extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 uploadlostitemimage();
-//                mprogressDialog.setMessage("Uploading...");
-//                            mprogressDialog.show();
             }
         });
     }
@@ -134,7 +129,6 @@ public class t7_2_Upload_lost_item extends AppCompatActivity {
     }
 
     public void uploadimgtoFirebase(Uri uri) {
-
 
         user = fAuth.getCurrentUser().getUid();
         itemdetails.setImageUri(uri.toString());
@@ -175,6 +169,7 @@ public class t7_2_Upload_lost_item extends AppCompatActivity {
                         itemdetails.setDescription(descriptionoflostitem);
                         itemdetails.setDate(lostdate);
                         itemdetails.setUser(user);
+
                         root.push().setValue(itemdetails);
 
                         Toast.makeText(t7_2_Upload_lost_item.this, "Congratualtions !! Uploaded successfully", Toast.LENGTH_SHORT).show();
@@ -214,7 +209,7 @@ public class t7_2_Upload_lost_item extends AppCompatActivity {
     private void updateLabel() {
         String myFormat = "dd/MMM/yy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
         mdate.setText(sdf.format(myCalendar.getTime()));
+
     }
 }
