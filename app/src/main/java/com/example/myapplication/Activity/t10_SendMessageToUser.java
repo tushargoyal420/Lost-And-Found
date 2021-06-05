@@ -104,8 +104,8 @@ public class t10_SendMessageToUser extends AppCompatActivity {
                 text_send.setText("");
             }
         });
-        reference = FirebaseDatabase.getInstance().getReference("users").child(userid);
 
+        reference = FirebaseDatabase.getInstance().getReference("users").child(userid);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

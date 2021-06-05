@@ -55,25 +55,6 @@ public class t11_1_Messagelist_allusers extends AppCompatActivity{
         readUsers();
         userAdapter = new getuserinlistAdapter(this, mUsers,true);
         mrecyclerviewmessageslist.setAdapter(userAdapter);
-//        mrecyclerviewmessageslist.setLayoutManager(new LinearLayoutManager(this));
-//        list2 = new ArrayList<>();
-//        adapterShowMessagesList = new MyAdapterShowMessagesList(this, list2);
-//        mrecyclerviewmessageslist.setAdapter(adapterShowMessagesList);
-
-//        root.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-//                for(DataSnapshot dataSnapshot: snapshot.getChildren()){
-//                    ModelMessagesList model2= dataSnapshot.getValue(ModelMessagesList.class);
-//                    list2.add(model2);
-//                }
-//                adapterShowMessagesList.notifyDataSetChanged();
-//            }
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//            }
-//        });
     }
 
     private void readUsers() {
