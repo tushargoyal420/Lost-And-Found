@@ -1,5 +1,3 @@
-# Minor-2
+#########   Android App Development ###########
+
 Lost and Found Application
-
-
-Tushar Goyal
