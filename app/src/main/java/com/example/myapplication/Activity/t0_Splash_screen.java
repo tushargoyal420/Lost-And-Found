@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.R;
 
 public class t0_Splash_screen extends AppCompatActivity {
-
     View mpurpleeline, mwhiteline, mredline, mwhiteline2, mgreenline,mpurpleline2;
     TextView mlostandfoubdtextsplashscreen, mwelcomeinourappsplashscreen;
     private static final int SPLASH_TIME_OUT = 4000;
